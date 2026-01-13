@@ -190,7 +190,7 @@ body {
 
 .btn-custom {
     border-radius: 50px;
-    padding: 12px 40px;
+    padding: 16px 40px;
     font-weight: 600;
     transition: all 0.3s ease;
     text-transform: uppercase;
@@ -651,11 +651,19 @@ body {
 
 .close {
     color: var(--light-text) !important;
-    opacity: 0.7;
+    opacity: 0.8;
+    font-size: 1.8rem;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    line-height: 1;
 }
 
-.close:hover {
+.close:hover,
+.close:focus {
     opacity: 1;
+    color: var(--secondary-color) !important;
+    text-decoration: none;
+    transform: scale(1.2);
 }
 
 .podcast-content {
@@ -739,11 +747,11 @@ body {
 }
 
 .project-card {
-    background: var(--dark-bg);
-    border-radius: 15px;
+    background: linear-gradient(135deg, var(--dark-bg), rgba(26, 31, 46, 0.8));
+    border-radius: 20px;
     overflow: hidden;
     border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -752,13 +760,19 @@ body {
 .project-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary-color);
-    box-shadow: 0 20px 40px rgba(0, 102, 255, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 102, 255, 0.3), 0 0 30px rgba(0, 212, 255, 0.1);
+    background: linear-gradient(135deg, rgba(26, 31, 46, 0.95), var(--dark-bg));
 }
 
 .project-image-wrapper {
     position: relative;
     overflow: hidden;
     height: 250px;
+}
+
+/* Taller preview for mobile app screenshots */
+.project-image-wrapper.app {
+    height: 360px;
 }
 
 .project-image {
@@ -790,6 +804,30 @@ body {
     opacity: 1;
 }
 
+.project-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    background: linear-gradient(135deg, rgba(0, 102, 255, 0.95), rgba(0, 212, 255, 0.85));
+    color: #ffffff;
+    border: none;
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 102, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.project-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 102, 255, 0.5);
+}
+
 .project-actions {
     display: flex;
     gap: 1rem;
@@ -799,18 +837,22 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    background: var(--light-text);
-    color: var(--primary-color);
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #ffffff;
     border-radius: 50%;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     transition: all 0.3s ease;
     text-decoration: none;
+    box-shadow: 0 5px 20px rgba(0, 102, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .project-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 8px 30px rgba(0, 102, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .project-content {
@@ -821,10 +863,14 @@ body {
 }
 
 .project-content h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--light-text);
+    background: linear-gradient(135deg, var(--light-text), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .project-content p {
@@ -854,6 +900,83 @@ body {
 
 .project-card .btn-primary {
     margin-top: auto;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    box-shadow: 0 5px 20px rgba(0, 102, 255, 0.3);
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.project-card .btn-primary:hover::before {
+    left: 100%;
+}
+
+.project-card .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 102, 255, 0.5);
+}
+
+/* Expand button styling in cards */
+.project-card .expand-btn.btn-primary {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    padding: 16px 30px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.project-card .expand-btn.btn-primary::after {
+    content: '→';
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.project-card .expand-btn.btn-primary:hover::after {
+    transform: translateX(5px);
+}
+
+.app-stores {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.app-store-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, rgba(0, 102, 255, 0.15), rgba(0, 212, 255, 0.1));
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.app-store-badge:hover {
+    background: var(--primary-color);
+    color: var(--light-text);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 102, 255, 0.25);
 }
 
 /* ===================================
@@ -1450,6 +1573,12 @@ body {
         gap: 20px;
     }
 }
+
+@media (max-width: 768px) {
+    .project-image-wrapper.app {
+        height: 260px;
+    }
+}
 /* ===================================
    CONTACT FORM FEEDBACK
    =================================== */
@@ -1510,6 +1639,240 @@ body {
     height: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
+}
+
+/* Case Modals */
+.modal-case {
+    --bs-backdrop-bg: rgba(0, 0, 0, 0.9);
+}
+
+.modal-case .modal-content {
+    background: var(--dark-bg);
+    color: var(--light-text);
+    border: 1px solid var(--border-color);
+}
+
+.modal-case .modal-header,
+.modal-case .modal-footer {
+    border-color: var(--border-color);
+}
+
+.modal-case .carousel-item img {
+    object-fit: cover;
+    max-height: 70vh;
+}
+
+/* Responsive Modal Sizing */
+.modal-responsive {
+    max-width: 90vw;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    .modal-responsive {
+        max-width: 85%;
+    }
+}
+
+@media (min-width: 768px) {
+    .modal-responsive {
+        max-width: 800px;
+    }
+}
+
+@media (min-width: 992px) {
+    .modal-responsive {
+        max-width: 900px;
+    }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 576px) {
+    .modal-case .modal-content {
+        border-radius: 12px;
+    }
+    
+    .modal-case .modal-header {
+        padding: 1rem;
+    }
+    
+    .modal-case .modal-title {
+        font-size: 1.1rem;
+    }
+    
+    .modal-case .carousel-item img {
+        max-height: 40vh;
+    }
+    
+    .modal-case .modal-footer {
+        padding: 0.75rem;
+        flex-wrap: wrap;
+    }
+    
+    .modal-case .btn {
+        font-size: 0.875rem;
+        padding: 0.5rem 0.75rem;
+        margin: 0.25rem;
+    }
+}
+
+/* ===================================
+   EXPANDABLE CARDS
+   =================================== */
+.expandable-card {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.expandable-card.hidden-by-expand {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+}
+
+.expandable-card.expanded {
+    grid-column: 1 / -1;
+}
+
+.expanded-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, rgba(26, 31, 46, 0.95), rgba(15, 20, 25, 0.95));
+    border-radius: 0 0 15px 15px;
+    margin-top: -15px;
+    border: 1px solid var(--border-color);
+    border-top: none;
+}
+
+.expandable-card.expanded .expanded-content {
+    max-height: 2000px;
+    opacity: 1;
+    padding: 2rem;
+    margin-top: 0;
+}
+
+.expanded-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.expanded-header h4 {
+    color: var(--light-text);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.close-btn {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--light-text);
+    font-size: 2rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    padding: 0;
+}
+
+.close-btn:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: rotate(90deg);
+}
+
+.expanded-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.expanded-body .carousel {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.expanded-body .carousel-item img {
+    object-fit: cover;
+    max-height: 500px;
+    width: 100%;
+}
+
+.expanded-description {
+    color: var(--muted-text);
+    line-height: 1.8;
+}
+
+.expanded-description p {
+    margin-bottom: 1rem;
+}
+
+.expand-btn {
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+.expand-btn.project-btn {
+    background: rgba(0, 102, 255, 0.9);
+}
+
+.expand-btn.project-btn:hover {
+    background: var(--primary-color);
+}
+
+/* Expanded Card Mobile Styles */
+@media (max-width: 992px) {
+    .expanded-body {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .expanded-body .carousel-item img {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .expandable-card.expanded .expanded-content {
+        padding: 1.5rem;
+    }
+    
+    .expanded-header h4 {
+        font-size: 1.2rem;
+    }
+    
+    .close-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.75rem;
+    }
+    
+    .expanded-body .carousel-item img {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-case .carousel-item img {
+        max-height: 50vh;
+    }
 }
 
 .navbar-logo:hover {

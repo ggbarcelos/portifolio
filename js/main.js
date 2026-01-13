@@ -45,6 +45,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const filterButtons = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 
+// Function to filter projects
+function filterProjects(filterValue) {
+    projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        
+        if (filterValue === 'all' || category === filterValue) {
+            card.style.display = '';
+            card.classList.remove('hidden');
+            card.style.animation = 'fadeIn 0.5s ease-in-out';
+        } else {
+            card.style.display = 'none';
+            card.classList.add('hidden');
+        }
+    });
+    
+    // Reinitialize AOS for newly visible elements
+    setTimeout(() => {
+        AOS.refresh();
+    }, 100);
+}
+
+// Filter on page load - show only aplicativos
+window.addEventListener('DOMContentLoaded', function() {
+    filterProjects('aplicativos');
+});
+
 filterButtons.forEach(button => {
     button.addEventListener('click', function() {
         // Remove active class from all buttons
@@ -56,19 +82,8 @@ filterButtons.forEach(button => {
         // Get filter value
         const filterValue = this.getAttribute('data-filter');
         
-        // Filter projects with animation
-        projectCards.forEach(card => {
-            const category = card.getAttribute('data-category');
-            
-            if (filterValue === 'all' || category === filterValue) {
-                card.style.display = 'block';
-                card.style.animation = 'fadeIn 0.5s ease-in-out';
-                // Reinitialize AOS for newly visible elements
-                AOS.refresh();
-            } else {
-                card.style.display = 'none';
-            }
-        });
+        // Filter projects
+        filterProjects(filterValue);
     });
 });
 
@@ -347,6 +362,83 @@ if ('IntersectionObserver' in window) {
         imageObserver.observe(img);
     });
 }
+
+// ===================================
+// EXPANDABLE CARDS
+// ===================================
+document.addEventListener('DOMContentLoaded', function() {
+    const expandButtons = document.querySelectorAll('.expand-btn');
+    const closeButtons = document.querySelectorAll('.close-btn');
+    const expandableCards = document.querySelectorAll('.expandable-card');
+    
+    expandButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const cardId = this.getAttribute('data-card');
+            const card = document.querySelector(`#expanded-${cardId}`).closest('.expandable-card');
+            
+            // Close all other expanded cards and show all hidden cards
+            document.querySelectorAll('.expandable-card.expanded').forEach(openCard => {
+                if (openCard !== card) {
+                    openCard.classList.remove('expanded');
+                }
+            });
+            
+            // Toggle current card
+            const isExpanding = !card.classList.contains('expanded');
+            card.classList.toggle('expanded');
+            
+            // Hide/show other cards
+            expandableCards.forEach(otherCard => {
+                if (otherCard !== card) {
+                    if (isExpanding) {
+                        otherCard.classList.add('hidden-by-expand');
+                    } else {
+                        otherCard.classList.remove('hidden-by-expand');
+                    }
+                }
+            });
+            
+            // Smooth scroll to card
+            if (isExpanding) {
+                setTimeout(() => {
+                    card.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start',
+                        inline: 'nearest'
+                    });
+                }, 100);
+            }
+        });
+    });
+    
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const cardId = this.getAttribute('data-card');
+            const card = document.querySelector(`#expanded-${cardId}`).closest('.expandable-card');
+            card.classList.remove('expanded');
+            
+            // Show all cards again
+            expandableCards.forEach(otherCard => {
+                otherCard.classList.remove('hidden-by-expand');
+            });
+        });
+    });
+    
+    // Close on click outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.expandable-card') && !e.target.closest('.expand-btn')) {
+            document.querySelectorAll('.expandable-card.expanded').forEach(card => {
+                card.classList.remove('expanded');
+            });
+            // Show all cards again
+            expandableCards.forEach(card => {
+                card.classList.remove('hidden-by-expand');
+            });
+        }
+    });
+});
 
 // ===================================
 // PAGE LOAD ANIMATION
