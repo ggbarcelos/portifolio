@@ -1234,6 +1234,25 @@ body {
         padding-bottom: 0.5rem;
     }
 
+    .navbar-custom .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .navbar-toggler {
+        padding: 0.35rem 0.6rem;
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .navbar-collapse {
+        padding: 0.35rem 0;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 0.35rem;
+    }
+
     .navbar-logo {
         max-height: 40px;
         max-width: 160px;
