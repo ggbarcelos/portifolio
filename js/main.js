@@ -261,15 +261,17 @@ if (contactForm) {
 }
 
 // ===================================
-// PARALLAX EFFECT ON HERO BACKGROUND
+// PARALLAX EFFECT ON HERO BACKGROUND (disable on mobile for performance)
 // ===================================
-window.addEventListener('scroll', function() {
-    const heroBackground = document.querySelector('.hero-background');
-    if (heroBackground) {
-        const scrollPosition = window.scrollY;
-        heroBackground.style.transform = `translateY(${scrollPosition * 0.5}px)`;
-    }
-});
+if (window.innerWidth > 768) {
+    window.addEventListener('scroll', function() {
+        const heroBackground = document.querySelector('.hero-background');
+        if (heroBackground) {
+            const scrollPosition = window.scrollY;
+            heroBackground.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+        }
+    });
+}
 
 // ===================================
 // COUNTER ANIMATION (OPTIONAL)
