@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvimento Web | Glauber Barcelos</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Desenvolvimento web profissional - Landing pages, SaaS, plataformas complexas. Da concepção ao lançamento com tecnologias modernas e escaláveis.">
+    <meta name="keywords" content="desenvolvimento web, landing page, SaaS, plataforma web, aplicação web, react, angular, asp.net">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Desenvolvimento Web Profissional | Glauber Barcelos">
+    <meta property="og:description" content="Landing pages, SaaS e aplicações web complexas. Desenvolvimento profissional com tecnologias modernas.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://glauberbarcelos.com.br/img/glauber.jpeg">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --tech-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --success-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --orange-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            --dark-bg: #0a0e27;
+            --dark-surface: #151932;
+            --card-bg: #1a1f3a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0aec0;
+            --accent-blue: #4facfe;
+            --accent-purple: #667eea;
+            --accent-pink: #f093fb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(79, 172, 254, 0.15) 0%, transparent 70%);
+            top: -250px;
+            right: -250px;
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(240, 147, 251, 0.1) 0%, transparent 70%);
+            bottom: -200px;
+            left: -200px;
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(50px, 50px) scale(1.1); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(79, 172, 254, 0.1);
+            border: 1px solid rgba(79, 172, 254, 0.3);
+            border-radius: 50px;
+            color: var(--accent-blue);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #a0aec0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: slideUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-title .gradient-text {
+            background: var(--tech-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 600px;
+            animation: slideUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            animation: slideUp 0.8s ease-out 0.6s both;
+        }
+
+        .btn-primary-custom {
+            padding: 16px 40px;
+            background: var(--tech-gradient);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3);
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(79, 172, 254, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-secondary-custom {
+            padding: 16px 40px;
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-secondary-custom:hover {
+            border-color: var(--accent-blue);
+            background: rgba(79, 172, 254, 0.1);
+            transform: translateY(-3px);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Browser Mockup in Hero */
+        .hero-visual {
+            position: relative;
+            animation: slideLeft 0.8s ease-out 0.4s both;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 600px;
+        }
+
+        .browser-mockup {
+            width: 100%;
+            max-width: 650px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 30px 90px rgba(79, 172, 254, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: float-browser 8s ease-in-out infinite;
+        }
+
+        @keyframes float-browser {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(-2deg);
+            }
+        }
+
+        .browser-header {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .browser-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .browser-dot:nth-child(1) { background: #ff5f56; }
+        .browser-dot:nth-child(2) { background: #ffbd2e; }
+        .browser-dot:nth-child(3) { background: #27c93f; }
+
+        .browser-url {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px 15px;
+            border-radius: 8px;
+            margin-left: 15px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .browser-content {
+            padding: 40px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .browser-content i {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .browser-content h3 {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .browser-content p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .float-element {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: rgba(79, 172, 254, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--accent-blue);
+            animation: float-element 5s ease-in-out infinite;
+            box-shadow: 0 15px 40px rgba(79, 172, 254, 0.3);
+        }
+
+        @keyframes float-element {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-25px) rotate(15deg);
+            }
+        }
+
+        /* Web Types Grid */
+        .web-types-section {
+            padding: 120px 0;
+            background: var(--dark-surface);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(79, 172, 254, 0.1);
+            border: 1px solid rgba(79, 172, 254, 0.3);
+            border-radius: 50px;
+            color: var(--accent-blue);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .web-type-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 50px 40px;
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .web-type-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--tech-gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .web-type-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(79, 172, 254, 0.3);
+            box-shadow: 0 20px 60px rgba(79, 172, 254, 0.2);
+        }
+
+        .web-type-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .web-type-icon {
+            width: 90px;
+            height: 90px;
+            background: var(--tech-gradient);
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .web-type-card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .web-type-card .subtitle {
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .web-type-card p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 12px 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+        }
+
+        .feature-list li i {
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+            min-width: 20px;
+        }
+
+        /* Visual Showcase Section */
+        .showcase-section {
+            padding: 120px 0;
+            background: var(--dark-bg);
+        }
+
+        .devices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-top: 80px;
+        }
+
+        .device-display {
+            position: relative;
+            transition: transform 0.4s ease;
+        }
+
+        .device-display:hover {
+            transform: translateY(-15px) scale(1.03);
+        }
+
+        .laptop-frame {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1a1f3a 0%, #2a2f4a 100%);
+            border-radius: 15px 15px 0 0;
+            padding: 20px 15px 0;
+            box-shadow: 0 40px 100px rgba(102, 126, 234, 0.4);
+            border: 3px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .laptop-screen {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+        }
+
+        .laptop-screen i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .laptop-screen h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .laptop-base {
+            width: 120%;
+            height: 15px;
+            background: linear-gradient(135deg, #2a2f4a 0%, #1a1f3a 100%);
+            margin: 0 auto;
+            position: relative;
+            left: -10%;
+            border-radius: 0 0 15px 15px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: none;
+        }
+
+        .tablet-frame {
+            width: 100%;
+            max-width: 350px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1a1f3a 0%, #2a2f4a 100%);
+            border-radius: 25px;
+            padding: 25px;
+            box-shadow: 0 35px 90px rgba(79, 172, 254, 0.4);
+            border: 3px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tablet-screen {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+        }
+
+        .tablet-screen i {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+        }
+
+        .mobile-frame {
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1a1f3a 0%, #2a2f4a 100%);
+            border-radius: 35px;
+            padding: 15px;
+            box-shadow: 0 30px 80px rgba(240, 147, 251, 0.4);
+            border: 3px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-screen {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            position: relative;
+        }
+
+        .mobile-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 25px;
+            background: #0a0e27;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .mobile-screen i {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 120px 0;
+            background: var(--dark-surface);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .process-card {
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .process-card::before {
+            content: attr(data-step);
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--tech-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.5rem;
+            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.4);
+        }
+
+        .process-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 20px 50px rgba(79, 172, 254, 0.3);
+        }
+
+        .process-card i {
+            font-size: 2.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .process-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .process-card p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 100px 0;
+            background: var(--dark-bg);
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 50px 30px;
+            border-radius: 24px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 25px 60px rgba(79, 172, 254, 0.3);
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 800;
+            background: var(--tech-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 0;
+            background: var(--dark-surface);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-card {
+            background: var(--tech-gradient);
+            border-radius: 30px;
+            padding: 80px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+        }
+
+        .cta-card::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            bottom: -50px;
+            left: -50px;
+        }
+
+        .cta-card h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-card p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-white {
+            padding: 18px 45px;
+            background: white;
+            color: #4facfe;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            color: #4facfe;
+            text-decoration: none;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 70px;
+            height: 70px;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: #FFF;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2rem;
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 50px rgba(37, 211, 102, 0.6);
+            text-decoration: none;
+            color: #FFF;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 10px 40px rgba(37, 211, 102, 0.5);
+            }
+            50% {
+                box-shadow: 0 10px 60px rgba(37, 211, 102, 0.7);
+            }
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            margin-top: 60px;
+            padding-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .related-service {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .related-service:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent-purple);
+            transform: translateY(-5px);
+            text-decoration: none;
+        }
+
+        .related-service h4 {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .related-service p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .related-service i {
+            color: var(--accent-blue);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .browser-mockup {
+                max-width: 100%;
+            }
+
+            .browser-content {
+                padding: 30px 20px;
+                min-height: 300px;
+            }
+
+            .hero-visual {
+                min-height: 400px;
+                margin-top: 40px;
+            }
+
+            .devices-grid {
+                gap: 40px;
+            }
+
+            .cta-card {
+                padding: 60px 30px;
+            }
+
+            .cta-card h2 {
+                font-size: 2rem;
+            }
+
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .float-element {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-surface);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--accent-purple);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            <i class="fas fa-code"></i> Desenvolvimento Web Premium
+                        </div>
+                        <h1 class="hero-title">
+                            Soluções Web que <span class="gradient-text">Transformam Negócios</span>
+                        </h1>
+                        <p class="hero-description">
+                            De landing pages de alta conversão a plataformas SaaS complexas. Desenvolvimento web profissional com tecnologias modernas, escaláveis e focadas em resultados.
+                        </p>
+                        <div class="hero-cta">
+                            <a href="#contact" class="btn-primary-custom">
+                                <i class="fab fa-whatsapp"></i> Vamos agendar uma conversa?
+                            </a>
+                            <a href="#types" class="btn-secondary-custom">
+                                <i class="fas fa-arrow-down"></i> Explorar Soluções
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-visual">
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <div class="browser-dot"></div>
+                                <div class="browser-dot"></div>
+                                <div class="browser-dot"></div>
+                                <div class="browser-url">
+                                    <i class="fas fa-lock" style="font-size: 0.8rem; margin-right: 5px;"></i>
+                                    seuprojeto.com.br
+                                </div>
+                            </div>
+                            <div class="browser-content">
+                                <i class="fas fa-rocket"></i>
+                                <h3>Seu Projeto Web</h3>
+                                <p>Transforme sua ideia em realidade digital</p>
+                            </div>
+                        </div>
+                        <div class="floating-elements">
+                            <div class="float-element" style="top: 5%; left: -5%; animation-delay: 0s;">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <div class="float-element" style="top: 25%; right: -5%; animation-delay: 1.5s;">
+                                <i class="fab fa-angular"></i>
+                            </div>
+                            <div class="float-element" style="bottom: 25%; left: 0%; animation-delay: 2.5s;">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                            <div class="float-element" style="bottom: 5%; right: 0%; animation-delay: 1s;">
+                                <i class="fas fa-database"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Web Types Section -->
+    <section class="web-types-section" id="types">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-layer-group"></i> Tipos de Projetos
+                </div>
+                <h2 class="section-title">Soluções Web Sob Medida</h2>
+                <p class="section-description">
+                    Do simples ao complexo, desenvolvemos a solução perfeita para suas necessidades
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="web-type-card">
+                        <div class="web-type-icon">
+                            <i class="fas fa-file-code"></i>
+                        </div>
+                        <h3>Landing Pages</h3>
+                        <div class="subtitle">Alta Conversão</div>
+                        <p>Páginas otimizadas para gerar leads e vendas. Design responsivo, rápido e focado em conversão.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Design responsivo moderno</li>
+                            <li><i class="fas fa-check-circle"></i> Otimização para SEO</li>
+                            <li><i class="fas fa-check-circle"></i> Integração com ferramentas de marketing</li>
+                            <li><i class="fas fa-check-circle"></i> Performance otimizada</li>
+                            <li><i class="fas fa-check-circle"></i> Formulários e CTAs estratégicos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="web-type-card">
+                        <div class="web-type-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>E-commerce</h3>
+                        <div class="subtitle">Venda Online</div>
+                        <p>Lojas virtuais completas e seguras. Gestão de produtos, pagamentos integrados e experiência excepcional.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Catálogo de produtos completo</li>
+                            <li><i class="fas fa-check-circle"></i> Gateway de pagamento integrado</li>
+                            <li><i class="fas fa-check-circle"></i> Painel administrativo</li>
+                            <li><i class="fas fa-check-circle"></i> Sistema de frete automatizado</li>
+                            <li><i class="fas fa-check-circle"></i> Relatórios de vendas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="web-type-card">
+                        <div class="web-type-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Plataformas SaaS</h3>
+                        <div class="subtitle">Software como Serviço</div>
+                        <p>Sistemas web complexos escaláveis. Multitenancy, assinaturas, APIs e integrações avançadas.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Arquitetura multitenancy</li>
+                            <li><i class="fas fa-check-circle"></i> Sistema de assinaturas</li>
+                            <li><i class="fas fa-check-circle"></i> APIs RESTful documentadas</li>
+                            <li><i class="fas fa-check-circle"></i> Dashboard analytics</li>
+                            <li><i class="fas fa-check-circle"></i> Escalabilidade garantida</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="web-type-card">
+                        <div class="web-type-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Portais Corporativos</h3>
+                        <div class="subtitle">Gestão Empresarial</div>
+                        <p>Sistemas internos para empresas. Gestão de processos, documentos e comunicação corporativa.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Gestão de usuários e permissões</li>
+                            <li><i class="fas fa-check-circle"></i> Workflow automatizado</li>
+                            <li><i class="fas fa-check-circle"></i> Integração com sistemas legados</li>
+                            <li><i class="fas fa-check-circle"></i> Relatórios personalizados</li>
+                            <li><i class="fas fa-check-circle"></i> Segurança enterprise</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="web-type-card">
+                        <div class="web-type-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Plataformas EAD</h3>
+                        <div class="subtitle">Ensino Online</div>
+                        <p>Sistemas de ensino à distância. Cursos, vídeos, avaliações e certificados integrados.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Gestão de cursos e aulas</li>
+                            <li><i class="fas fa-check-circle"></i> Player de vídeo integrado</li>
+                            <li><i class="fas fa-check-circle"></i> Sistema de avaliações</li>
+                            <li><i class="fas fa-check-circle"></i> Certificados automáticos</li>
+                            <li><i class="fas fa-check-circle"></i> Acompanhamento de progresso</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="web-type-card">
+                        <div class="web-type-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Dashboards Analytics</h3>
+                        <div class="subtitle">Inteligência de Negócios</div>
+                        <p>Painéis de dados interativos. Visualização em tempo real, relatórios e insights acionáveis.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Gráficos interativos</li>
+                            <li><i class="fas fa-check-circle"></i> Dados em tempo real</li>
+                            <li><i class="fas fa-check-circle"></i> Filtros personalizáveis</li>
+                            <li><i class="fas fa-check-circle"></i> Exportação de relatórios</li>
+                            <li><i class="fas fa-check-circle"></i> Alertas automáticos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 mb-4">
+                    <div class="web-type-card" style="background: linear-gradient(135deg, rgba(147, 51, 234, 0.05) 0%, rgba(79, 70, 229, 0.05) 100%); border-color: rgba(147, 51, 234, 0.3);">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center mb-3 mb-md-0">
+                                <div class="web-type-icon" style="background: linear-gradient(135deg, rgba(147, 51, 234, 0.8), rgba(79, 70, 229, 0.8)); width: 100px; height: 100px; font-size: 3rem; margin: 0 auto;">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <h3 style="color: #a78bfa; margin-bottom: 10px;"><i class="fas fa-sparkles"></i> Inteligência Artificial nas Suas Aplicações</h3>
+                                <div class="subtitle" style="color: #c4b5fd; margin-bottom: 20px;">Recursos inteligentes e automatizados</div>
+                                <p style="margin-bottom: 20px; font-size: 1.05rem;">Integre o poder da IA em suas aplicações web. Chatbots inteligentes, análise de sentimentos, recomendações personalizadas, automação de processos e muito mais.</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul class="feature-list">
+                                            <li><i class="fas fa-check-circle" style="color: #a78bfa;"></i> Chatbots e assistentes virtuais com IA</li>
+                                            <li><i class="fas fa-check-circle" style="color: #a78bfa;"></i> Processamento de linguagem natural (NLP)</li>
+                                            <li><i class="fas fa-check-circle" style="color: #a78bfa;"></i> Análise preditiva e machine learning</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="feature-list">
+                                            <li><i class="fas fa-check-circle" style="color: #a78bfa;"></i> Reconhecimento de imagens e OCR</li>
+                                            <li><i class="fas fa-check-circle" style="color: #a78bfa;"></i> Sistemas de recomendação personalizados</li>
+                                            <li><i class="fas fa-check-circle" style="color: #a78bfa;"></i> Integração com OpenAI, Azure AI, Google AI</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Showcase Section -->
+    <section class="showcase-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-desktop"></i> Design Responsivo
+                </div>
+                <h2 class="section-title">Perfeito em Todos os Dispositivos</h2>
+                <p class="section-description">
+                    Suas aplicações web funcionam perfeitamente em desktop, tablet e mobile
+                </p>
+            </div>
+
+            <div class="devices-grid">
+                <div class="device-display">
+                    <div class="laptop-frame">
+                        <div class="laptop-screen">
+                            <i class="fas fa-laptop-code"></i>
+                            <h4>Desktop</h4>
+                        </div>
+                    </div>
+                    <div class="laptop-base"></div>
+                </div>
+
+                <div class="device-display">
+                    <div class="tablet-frame">
+                        <div class="tablet-screen">
+                            <i class="fas fa-tablet-alt"></i>
+                            <h4>Tablet</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="device-display">
+                    <div class="mobile-frame">
+                        <div class="mobile-screen">
+                            <div class="mobile-notch"></div>
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Mobile</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-tasks"></i> Metodologia
+                </div>
+                <h2 class="section-title">Processo de Desenvolvimento</h2>
+                <p class="section-description">
+                    Método ágil e transparente, da descoberta ao lançamento
+                </p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-card" data-step="1">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Descoberta</h3>
+                    <p>Entendemos seu negócio, objetivos e público-alvo. Mapeamos requisitos e definimos o escopo do projeto.</p>
+                </div>
+
+                <div class="process-card" data-step="2">
+                    <i class="fas fa-pencil-ruler"></i>
+                    <h3>Design UX/UI</h3>
+                    <p>Criamos protótipos interativos e wireframes. Validamos a experiência antes do desenvolvimento.</p>
+                </div>
+
+                <div class="process-card" data-step="3">
+                    <i class="fas fa-code"></i>
+                    <h3>Desenvolvimento</h3>
+                    <p>Codificação com as melhores práticas, testes contínuos e entregas incrementais.</p>
+                </div>
+
+                <div class="process-card" data-step="4">
+                    <i class="fas fa-vial"></i>
+                    <h3>Testes & QA</h3>
+                    <p>Testes rigorosos de funcionalidade, performance, segurança e compatibilidade.</p>
+                </div>
+
+                <div class="process-card" data-step="5">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Deploy</h3>
+                    <p>Lançamento em ambiente de produção com configuração de domínio, SSL e infraestrutura.</p>
+                </div>
+
+                <div class="process-card" data-step="6">
+                    <i class="fas fa-headset"></i>
+                    <h3>Suporte</h3>
+                    <p>Monitoramento, manutenção e suporte contínuo para garantir estabilidade e evolução.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Responsivo</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">A+</div>
+                    <div class="stat-label">Performance</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">SEO</div>
+                    <div class="stat-label">Otimizado</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Suporte</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-card">
+                <h2>Pronto Para Começar Seu Projeto Web?</h2>
+                <p>Vamos transformar sua ideia em uma solução digital de sucesso</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/5521980604422?text=Olá%2C%20tenho%20interesse%20em%20desenvolvimento%20web" target="_blank" class="btn-white">
+                        <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+                    </a>
+                    <a href="index.html" class="btn-secondary-custom">
+                        <i class="fas fa-arrow-left"></i> Voltar ao Portfólio
+                    </a>
+                </div>
+            </div>
+
+            <!-- Related Services -->
+            <div class="nav-links">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <a href="desenvolvimento-mobile-desktop.html" class="related-service">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Desenvolvimento Mobile & Desktop</h4>
+                            <p>Apps para Android, iOS, Windows e macOS →</p>
+                        </a>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <a href="index.html#portfolio" class="related-service">
+                            <i class="fas fa-briefcase"></i>
+                            <h4>Ver Portfólio Completo</h4>
+                            <p>Conheça todos os nossos projetos →</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Glauber Barcelos. Todos os direitos reservados. | <a href="index.html">Voltar para a Página Principal</a></p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5521980604422?text=Olá%2C%20tenho%20interesse%20em%20desenvolvimento%20web" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.web-type-card, .process-card, .device-display, .stat-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Parallax effect for floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const floatElements = document.querySelectorAll('.float-element');
+            
+            floatElements.forEach((element, index) => {
+                const speed = 0.05 * (index + 1);
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
