@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev as a Service | Engenheiro de Software Sênior e Líder Técnico | Glauber Barcelos</title>
+
+    <meta name="description" content="Dev as a Service com atuação dupla: Engenheiro de Software Sênior e Líder Técnico sob demanda para acelerar seu produto com arquitetura sólida, entregas contínuas e visão de negócio.">
+    <meta name="keywords" content="dev as a service, engenheiro de software sênior, líder técnico, tech lead sob demanda, arquiteto de software, consultoria técnica, squad on demand, fractional cto">
+    <link rel="canonical" href="https://glauberbarcelos.com.br/dev-as-a-service.html">
+
+    <meta property="og:title" content="Dev as a Service | Engenheiro de Software Sênior e Líder Técnico | Glauber Barcelos">
+    <meta property="og:description" content="Atuação como Engenheiro de Software Sênior e Líder Técnico no seu produto, com entregas em sprint, arquitetura escalável e foco em resultado.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://glauberbarcelos.com.br/dev-as-a-service.html">
+    <meta property="og:image" content="https://glauberbarcelos.com.br/img/glauber.jpeg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "@id": "https://glauberbarcelos.com.br/dev-as-a-service.html#service",
+          "name": "Dev as a Service",
+          "description": "Atuação sob demanda como Engenheiro de Software Sênior e Líder Técnico para produtos digitais: arquitetura, gestão técnica de backlog, direção de time e entregas contínuas.",
+          "provider": {
+            "@type": "Person",
+            "name": "Glauber Barcelos",
+            "url": "https://glauberbarcelos.com.br/"
+          },
+          "serviceType": "Engenharia de Software Sênior e Liderança Técnica sob Demanda",
+          "areaServed": { "@type": "Country", "name": "Brasil" },
+          "url": "https://glauberbarcelos.com.br/dev-as-a-service.html"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://glauberbarcelos.com.br/" },
+            { "@type": "ListItem", "position": 2, "name": "Dev as a Service", "item": "https://glauberbarcelos.com.br/dev-as-a-service.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-1: #071320;
+            --bg-2: #0f2234;
+            --surface: #112a3f;
+            --card: #173952;
+            --text: #f5f8fb;
+            --muted: #afc4d6;
+            --accent: #2ec4b6;
+            --accent-2: #45b7ff;
+            --accent-3: #ffd166;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: radial-gradient(circle at 15% 15%, #173952 0%, transparent 45%),
+                        radial-gradient(circle at 85% 10%, rgba(69, 183, 255, 0.2) 0%, transparent 40%),
+                        linear-gradient(160deg, var(--bg-1) 0%, var(--bg-2) 100%);
+            overflow-x: hidden;
+        }
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 80px 0 30px;
+        }
+
+        .badge-custom {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(46, 196, 182, 0.12);
+            border: 1px solid rgba(46, 196, 182, 0.35);
+            color: var(--accent);
+            border-radius: 999px;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.4rem;
+            line-height: 1.15;
+            font-weight: 900;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.5px;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--muted);
+            max-width: 680px;
+            margin-bottom: 1.8rem;
+        }
+
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn-primary-custom,
+        .btn-secondary-custom {
+            border-radius: 999px;
+            padding: 13px 28px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .btn-primary-custom {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: #062033;
+            box-shadow: 0 10px 30px rgba(46, 196, 182, 0.3);
+        }
+
+        .btn-secondary-custom {
+            border: 1px solid rgba(245, 248, 251, 0.25);
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .btn-primary-custom:hover,
+        .btn-secondary-custom:hover {
+            color: inherit;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 22px;
+            padding: 28px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-card ul {
+            margin: 0;
+            padding-left: 1.2rem;
+            color: var(--muted);
+        }
+
+        .hero-card li {
+            margin-bottom: 0.55rem;
+        }
+
+        section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-subtitle {
+            color: var(--muted);
+            max-width: 760px;
+            margin-bottom: 2.2rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(165deg, rgba(23, 57, 82, 0.9) 0%, rgba(17, 42, 63, 0.95) 100%);
+            border: 1px solid rgba(69, 183, 255, 0.2);
+            border-radius: 18px;
+            padding: 24px;
+            height: 100%;
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-card i {
+            color: var(--accent-3);
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-card h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .feature-card p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .why-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+
+        .why-box h5 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+            color: var(--accent);
+        }
+
+        .why-box p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .cta-final {
+            background: linear-gradient(145deg, rgba(69, 183, 255, 0.12), rgba(46, 196, 182, 0.12));
+            border-top: 1px solid rgba(69, 183, 255, 0.2);
+            border-bottom: 1px solid rgba(69, 183, 255, 0.2);
+        }
+
+        .cta-panel {
+            background: rgba(8, 28, 43, 0.8);
+            border: 1px solid rgba(69, 183, 255, 0.25);
+            border-radius: 22px;
+            padding: 34px;
+            text-align: center;
+        }
+
+        .cta-panel p {
+            color: var(--muted);
+            margin-bottom: 1.2rem;
+        }
+
+        .small-note {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-top: 0.8rem;
+        }
+
+        .footer {
+            padding: 28px 0;
+            color: var(--muted);
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 991px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-card {
+                margin-top: 2rem;
+            }
+        }
+
+        @media (max-width: 575px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <span class="badge-custom"><i class="fas fa-user-cog"></i> Serviço Especializado</span>
+                    <h1><span class="text-gradient">Dev as a Service</span> com atuação como Engenheiro de Software Sênior e Líder Técnico</h1>
+                    <p>Você não precisa contratar um time completo antes da hora. Com o modelo Dev as a Service, posso atuar como Engenheiro de Software Sênior na execução crítica e também como Líder Técnico na direção do produto, organizando roadmap, decisões de arquitetura e entregas contínuas.</p>
+                    <div class="cta-group">
+                        <a href="https://wa.me/5551980120387?text=Ol%C3%A1%20Glauber!%20Quero%20entender%20o%20modelo%20Dev%20as%20a%20Service." target="_blank" rel="noopener" class="btn-primary-custom">
+                            <i class="fab fa-whatsapp"></i> Quero aplicar no meu produto
+                        </a>
+                        <a href="index.html#services" class="btn-secondary-custom">
+                            <i class="fas fa-arrow-left"></i> Voltar para serviços
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="hero-card">
+                        <h3>O que você recebe na prática</h3>
+                        <ul>
+                            <li>Atuação como Engenheiro de Software Sênior em frentes críticas.</li>
+                            <li>Direção técnica como Líder Técnico com foco em negócio e prazo.</li>
+                            <li>Arquitetura moderna para web, mobile e APIs.</li>
+                            <li>Melhoria de qualidade, performance e previsibilidade.</li>
+                            <li>Condução de sprint, priorização e acompanhamento de entregas.</li>
+                            <li>Mentoria do time para aumentar autonomia e velocidade.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">O que é Dev as a Service?</h2>
+            <p class="section-subtitle">É um modelo de contratação em que você tem acesso contínuo a capacidade técnica sênior sem assumir o custo fixo de um time completo desde o início. Em vez de contratar só horas de código, você contrata duas frentes no mesmo parceiro: execução como Engenheiro de Software Sênior e direcionamento como Líder Técnico.</p>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="feature-card">
+                        <i class="fas fa-sitemap"></i>
+                        <h4>Arquitetura com visão de futuro</h4>
+                        <p>Estruturo soluções pensando em escalabilidade, manutenção e redução de risco técnico.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="feature-card">
+                        <i class="fas fa-tasks"></i>
+                        <h4>Entrega orientada a valor</h4>
+                        <p>Priorização por impacto real no negócio, com ciclos curtos e resultados tangíveis.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="feature-card">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Parceria técnica estratégica</h4>
+                        <p>Atuação como braço técnico da empresa para apoiar produto, operação e decisões críticas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Qualificações como Engenheiro Sênior e Líder Técnico</h2>
+            <p class="section-subtitle">Mais de 20 anos atuando em produtos digitais com experiência em startups, saúde, varejo e tecnologia, conectando estratégia de negócio com engenharia de software e liderança de times.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="why-box">
+                        <h5>Liderança hands-on</h5>
+                        <p>Além de definir direção técnica, participo da implementação para garantir ritmo e qualidade.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="why-box">
+                        <h5>Gestão técnica de produto</h5>
+                        <p>Transformo objetivos de negócio em backlog executável, com critérios claros de priorização.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="why-box">
+                        <h5>Formação e evolução de times</h5>
+                        <p>Faço mentoria técnica, elevo padrões de código e reduzo dependência de pessoas-chave.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="why-box">
+                        <h5>Stack moderna e pragmática</h5>
+                        <p>.NET, .NET MAUI, APIs escaláveis, arquitetura limpa e integração de IA quando gera valor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Por que me contratar</h2>
+            <p class="section-subtitle">Porque você precisa de alguém que una velocidade de execução, maturidade técnica e visão de produto para reduzir retrabalho e acelerar resultados.</p>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="feature-card">
+                        <i class="fas fa-clock"></i>
+                        <h4>Menor time-to-market</h4>
+                        <p>Planejamento e execução orientados a entregas frequentes e validação rápida com o mercado.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Menos risco técnico</h4>
+                        <p>Decisões arquiteturais maduras evitam dívida técnica e custos de correção no futuro.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Mais previsibilidade</h4>
+                        <p>Você acompanha evolução por sprint, com clareza de prioridades, esforço e próximos passos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-final">
+        <div class="container">
+            <div class="cta-panel">
+                <h2 class="section-title">Seu produto precisa de direção técnica agora?</h2>
+                <p>Agende uma conversa de 30 minutos e eu te mostro como aplicar Dev as a Service no seu cenário, com escopo inicial e plano de execução.</p>
+                <div class="cta-group justify-content-center">
+                    <a href="https://wa.me/5551980120387?text=Ol%C3%A1%20Glauber!%20Quero%20uma%20proposta%20de%20Dev%20as%20a%20Service." target="_blank" rel="noopener" class="btn-primary-custom">
+                        <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+                    </a>
+                    <a href="mailto:glauberbarcelos@outlook.com?subject=Interesse%20em%20Dev%20as%20a%20Service" class="btn-secondary-custom">
+                        <i class="fas fa-envelope"></i> Receber proposta por e-mail
+                    </a>
+                </div>
+                <p class="small-note">Atendimento remoto para todo o Brasil.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Glauber Barcelos. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
