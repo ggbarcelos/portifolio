@@ -181,6 +181,34 @@ body {
     line-height: 1.8;
 }
 
+.hero-business-benefits {
+    display: grid;
+    gap: 0.7rem;
+    margin: -0.8rem 0 1.3rem;
+    max-width: 560px;
+}
+
+.hero-benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--light-text);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.hero-benefit-item i {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 102, 255, 0.2);
+    color: var(--secondary-color);
+    flex-shrink: 0;
+}
+
 .hero-cta {
     display: flex;
     gap: 1rem;
@@ -1760,6 +1788,309 @@ body {
 }
 
 /* ===================================
+   CONVERSION OVERRIDES
+   =================================== */
+html {
+    scroll-padding-top: 88px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-custom .navbar-brand,
+.section-title,
+.hero-title,
+.service-card h3 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero-section {
+    min-height: 92vh;
+    padding: 92px 0 48px;
+}
+
+.hero-content {
+    max-width: 760px;
+}
+
+.hero-title {
+    font-size: clamp(2.6rem, 5.2vw, 4.6rem);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+    margin-bottom: 1.1rem;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.15rem, 2vw, 1.65rem);
+    line-height: 1.35;
+    max-width: 720px;
+    margin-bottom: 1rem;
+}
+
+.hero-description {
+    max-width: 680px;
+    font-size: 1.06rem;
+}
+
+.hero-cta {
+    gap: 0.9rem;
+}
+
+.hero-cta .btn-custom {
+    min-width: 220px;
+}
+
+.hero-trust-badges {
+    margin-top: 1.25rem;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.trust-badge {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+}
+
+.trust-strip {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.trust-row {
+    align-items: stretch;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.trust-item {
+    height: 100%;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+}
+
+.section-subtitle {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+}
+
+.stat-card,
+.expertise-card,
+.service-card,
+.project-card,
+.testimonial-card,
+.contact-card,
+.faq-accordion .card,
+.contact-form {
+    border-radius: 22px;
+}
+
+.stat-card {
+    padding: 2rem 1.5rem;
+}
+
+.expertise-card {
+    padding: 1.5rem;
+}
+
+.service-card {
+    padding: 2rem;
+    height: 100%;
+}
+
+.service-card h3 {
+    font-size: 1.35rem;
+}
+
+.featured-list {
+    margin: 0;
+}
+
+.project-card {
+    background: linear-gradient(180deg, rgba(26, 31, 46, 0.9), rgba(15, 20, 25, 0.96));
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+}
+
+.project-content {
+    padding: 1.5rem 1.6rem 1.7rem;
+}
+
+.project-content h3 {
+    font-size: 1.35rem;
+}
+
+.project-content p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+
+.project-image-wrapper.app {
+    height: 300px;
+}
+
+.process-step {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.process-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.45rem;
+}
+
+.testimonial-card {
+    padding: 1.7rem;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
+}
+
+.testimonial-text {
+    color: var(--muted-text);
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.testimonial-author strong {
+    font-size: 1rem;
+}
+
+.faq-accordion .card-header {
+    padding: 0.2rem 1rem;
+}
+
+.faq-accordion .btn-link {
+    font-size: 1.02rem;
+    padding: 1rem 0;
+}
+
+.contact-form {
+    padding: 2rem;
+}
+
+.contact-form .form-control {
+    min-height: 52px;
+    font-size: 1rem;
+}
+
+.contact-form textarea.form-control {
+    min-height: 160px;
+}
+
+.field-error {
+    display: none;
+    margin-top: 0.5rem;
+    color: #ff8b8b;
+    font-size: 0.92rem;
+}
+
+.form-status {
+    display: none;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.form-status.info {
+    background: rgba(0, 102, 255, 0.12);
+    color: #8cc0ff;
+    border: 1px solid rgba(0, 102, 255, 0.22);
+}
+
+.form-status.success {
+    background: rgba(0, 208, 132, 0.12);
+    color: #78f1bb;
+    border: 1px solid rgba(0, 208, 132, 0.22);
+}
+
+.form-status.error {
+    background: rgba(255, 99, 99, 0.12);
+    color: #ff9a9a;
+    border: 1px solid rgba(255, 99, 99, 0.22);
+}
+
+@media (max-width: 991px) {
+    .hero-section {
+        min-height: auto;
+        padding: 84px 0 40px;
+    }
+
+    .hero-image {
+        margin-top: 2rem;
+    }
+
+    .trust-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .hero-cta .btn-custom {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    .hero-title {
+        font-size: clamp(2.2rem, 11vw, 3rem);
+    }
+
+    .hero-subtitle {
+        font-size: 1.05rem;
+    }
+
+    .hero-description {
+        font-size: 0.98rem;
+    }
+
+    .section-title {
+        font-size: clamp(1.8rem, 7vw, 2.4rem);
+    }
+
+    .contact-form {
+        padding: 1.25rem;
+    }
+
+    .project-image-wrapper.app {
+        height: 240px;
+    }
+
+    .project-content {
+        padding: 1.25rem;
+    }
+
+    .trust-item {
+        padding: 1rem 1.1rem;
+    }
+}
+
+/* ===================================
    RESPONSIVE DESIGN
    =================================== */
 @media (max-width: 768px) {
@@ -2675,10 +3006,16 @@ body {
 }
 
 .proof-logos {
+    width: min(100%, 900px);
+    overflow: hidden;
+    position: relative;
+}
+
+.proof-logos-track {
     display: flex;
-    flex-wrap: wrap;
     gap: 12px;
-    justify-content: center;
+    width: max-content;
+    animation: logosCarousel 28s linear infinite;
 }
 
 .proof-logo-item {
@@ -2693,6 +3030,94 @@ body {
 .proof-logo-item:hover {
     border-color: var(--primary-color);
     color: var(--light-text);
+}
+
+@keyframes logosCarousel {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ===================================
+   CONVERSION CTA BAR
+   =================================== */
+.conversion-cta-bar {
+    background: linear-gradient(90deg, rgba(0, 102, 255, 0.13), rgba(102, 16, 242, 0.12));
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 18px 0;
+}
+
+.conversion-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.conversion-cta-inner p {
+    margin: 0;
+    color: var(--light-text);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* ===================================
+   FEATURED CASES
+   =================================== */
+.featured-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.featured-case-card {
+    background: var(--dark-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.featured-case-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 212, 255, 0.45);
+    box-shadow: 0 20px 42px rgba(0, 0, 0, 0.35);
+}
+
+.featured-case-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.featured-case-content {
+    padding: 18px;
+}
+
+.featured-case-content h3 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: var(--light-text);
+}
+
+.featured-case-content p {
+    color: var(--muted-text);
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 10px;
+}
+
+.featured-case-content ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.featured-case-content li {
+    color: #d7e5f8;
+    font-size: 0.82rem;
+    margin-bottom: 4px;
 }
 
 /* ===================================
@@ -3136,6 +3561,32 @@ body {
         flex-direction: column;
         gap: 12px;
     }
+
+    .proof-logos-track {
+        animation-duration: 20s;
+    }
+
+    .conversion-cta-inner {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .conversion-cta-inner p {
+        font-size: 0.88rem;
+    }
+
+    .featured-cases-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .hero-business-benefits {
+        gap: 0.55rem;
+    }
+
+    .hero-benefit-item {
+        font-size: 0.88rem;
+    }
     
     .hero-trust-badges {
         flex-direction: column;
@@ -3166,5 +3617,11 @@ body {
         font-size: 1.5rem;
         bottom: 20px;
         right: 20px;
+    }
+}
+
+@media (max-width: 991px) {
+    .featured-cases-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
