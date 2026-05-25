@@ -96,21 +96,28 @@ document.addEventListener('DOMContentLoaded', () => {
             if (submitButton) {
                 submitButton.disabled = true;
                 submitButton.dataset.originalText = submitButton.dataset.originalText || submitButton.textContent;
-                submitButton.textContent = 'Abrindo e-mail...';
+                submitButton.textContent = 'Enviando...';
             }
 
-            showFormStatus('Abrindo seu aplicativo de e-mail...', 'info');
+            showFormStatus('Enviando mensagem...', 'info');
 
-            const subject = 'Contato pelo site - projeto digital';
-            const body = `Nome: ${values.name}\nContato: ${values.contact}\n\nProjeto:\n${values.message}`;
-            window.location.href = `mailto:glauberbarcelos@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-            setTimeout(() => {
-                if (submitButton) {
-                    submitButton.disabled = false;
-                    submitButton.textContent = submitButton.dataset.originalText || 'Enviar mensagem';
-                }
-            }, 800);
+            emailjs.sendForm('service_1u29mnn', 'template_776y0px', contactForm)
+                .then(() => {
+                    showFormStatus('Mensagem enviada com sucesso! Em breve entrarei em contato.', 'success');
+                    contactForm.reset();
+                })
+                .catch((error) => {
+                    console.error('EmailJS error status:', error?.status);
+                    console.error('EmailJS error text:', error?.text);
+                    console.error('EmailJS error full:', JSON.stringify(error));
+                    showFormStatus(`Erro ao enviar (${error?.status}: ${error?.text}). Tente novamente.`, 'error');
+                })
+                .finally(() => {
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.textContent = submitButton.dataset.originalText || 'Enviar mensagem';
+                    }
+                });
         });
     }
 
