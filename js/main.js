@@ -114,7 +114,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             showFormStatus('Enviando mensagem...', 'info');
 
-            emailjs.sendForm('service_1u29mnn', 'template_776y0px', contactForm)
+            emailjs.send('service_1u29mnn', 'template_776y0px', {
+                name:    values.name,
+                contact: values.contact,
+                message: values.message,
+                // campos extras que o template pode esperar
+                email:       'formulario@portifolio.com',
+                from_name:   values.name,
+                reply_to:    'formulario@portifolio.com',
+                to_name:     'Glauber'
+            })
                 .then(() => {
                     showFormStatus('Mensagem enviada! Vou te chamar no WhatsApp em breve. 🚀', 'success');
                     contactForm.reset();
