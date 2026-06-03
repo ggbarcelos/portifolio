@@ -732,6 +732,17 @@ img { max-width: 100%; height: auto; display: block; }
     padding: 0.22em 0.75em;
     border-radius: 100px;
 }
+.project-tags span:last-child:not(:first-child)[class=""] {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+/* badge "via True Tecnologia" */
+.project-tags .tag-via {
+    background: #f0fdf4;
+    color: #16a34a;
+    border: 1px solid #bbf7d0;
+    font-style: italic;
+}
 
 /* ===================================
    CTA FINAL SECTION
