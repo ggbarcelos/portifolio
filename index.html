@@ -232,12 +232,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#processo">Processo</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#cases">Projetos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#home" data-i18n="nav_home">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre" data-i18n="nav_about">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicos" data-i18n="nav_services">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#processo" data-i18n="nav_process">Processo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cases" data-i18n="nav_cases">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato" data-i18n="nav_contact">Contato</a></li>
+                    <li class="nav-item">
+                        <button id="langToggle" class="btn-lang" onclick="window.__i18n.toggleLang()" aria-label="Switch language">🇺🇸 EN</button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -250,21 +253,21 @@
                 <div class="col-lg-6 hero-content">
                     <div class="hero-badge">
                         <i class="fas fa-star"></i>
-                        <span>Engenheiro Sênior · 20+ anos de experiência</span>
+                        <span data-i18n="hero_badge">Engenheiro Sênior · 20+ anos de experiência</span>
                     </div>
-                    <h1 class="hero-title">Da ideia ao produto digital: <span class="hero-highlight">Web, Backend e Mobile</span> do início ao fim</h1>
-                    <p class="hero-subtitle">Entendo a dor real do seu negócio e entrego a solução tecnológica completa — sem terceiros, sem surpresas.</p>
+                    <h1 class="hero-title" data-i18n="hero_title">Da ideia ao produto digital: <span class="hero-highlight">Web, Backend e Mobile</span> do início ao fim</h1>
+                    <p class="hero-subtitle" data-i18n="hero_subtitle">Entendo a dor real do seu negócio e entrego a solução tecnológica completa — sem terceiros, sem surpresas.</p>
                     <div class="hero-benefits">
-                        <div class="hero-benefit"><i class="fas fa-check-circle"></i><span>Do diagnóstico à publicação final</span></div>
-                        <div class="hero-benefit"><i class="fas fa-check-circle"></i><span>Web, Backend e Mobile em um único parceiro</span></div>
-                        <div class="hero-benefit"><i class="fas fa-check-circle"></i><span>Foco em resultado, não só em código</span></div>
+                        <div class="hero-benefit"><i class="fas fa-check-circle"></i><span data-i18n="hero_b1">Do diagnóstico à publicação final</span></div>
+                        <div class="hero-benefit"><i class="fas fa-check-circle"></i><span data-i18n="hero_b2">Web, Backend e Mobile em um único parceiro</span></div>
+                        <div class="hero-benefit"><i class="fas fa-check-circle"></i><span data-i18n="hero_b3">Foco em resultado, não só em código</span></div>
                     </div>
                     <div class="hero-cta">
                         <a href="https://wa.me/5551980120387?text=Ol%C3%A1%20Glauber%2C%20quero%20solicitar%20meu%20projeto."
-                            target="_blank" rel="noopener" class="btn btn-hero">
+                            target="_blank" rel="noopener" class="btn btn-hero" data-i18n="hero_cta">
                             <i class="fab fa-whatsapp"></i> Vamos tirar sua ideia do papel
                         </a>
-                        <a href="#sobre" class="btn btn-hero-outline">Saiba mais</a>
+                        <a href="#sobre" class="btn btn-hero-outline" data-i18n="hero_more">Saiba mais</a>
                     </div>
                 </div>
 
@@ -276,14 +279,14 @@
                             <div class="float-icon"><i class="fas fa-code"></i></div>
                             <div class="float-text">
                                 <strong>20+ anos</strong>
-                                <small>de experiência</small>
+                                <small data-i18n="hero_years_lbl">de experiência</small>
                             </div>
                         </div>
                         <div class="hero-float-card card-bottom">
                             <div class="float-icon"><i class="fas fa-rocket"></i></div>
                             <div class="float-text">
                                 <strong>100+ projetos</strong>
-                                <small>entregues</small>
+                                <small data-i18n="hero_projects_lbl">entregues</small>
                             </div>
                         </div>
                     </div>
@@ -299,7 +302,7 @@
     <section class="proof-strip" aria-label="Clientes e projetos">
         <div class="container">
             <div class="proof-strip-inner">
-                <span class="proof-strip-label">Projetos entregues para:</span>
+                <span class="proof-strip-label" data-i18n="proof_label">Projetos entregues para:</span>
                 <div class="proof-strip-logos">
                     <div class="proof-strip-track">
                         <span class="proof-strip-item"><i class="fas fa-heartbeat"></i> SAMU 192</span>
@@ -330,29 +333,29 @@
                             <div class="about-stats-bar">
                                 <div class="about-stat">
                                     <span class="about-stat-num">20+</span>
-                                    <span class="about-stat-lbl">anos</span>
+                        <span class="about-stat-lbl" data-i18n="about_stat_years">anos</span>
                                 </div>
                                 <div class="about-stat-sep"></div>
                                 <div class="about-stat">
                                     <span class="about-stat-num">100+</span>
-                                    <span class="about-stat-lbl">projetos</span>
+                                    <span class="about-stat-lbl" data-i18n="about_stat_projects">projetos</span>
                                 </div>
                                 <div class="about-stat-sep"></div>
                                 <div class="about-stat">
                                     <span class="about-stat-num">3</span>
-                                    <span class="about-stat-lbl">plataformas</span>
+                                    <span class="about-stat-lbl" data-i18n="about_stat_platforms">plataformas</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 offset-lg-1">
-                        <span class="section-badge">Sobre Mim</span>
-                        <h2 class="section-title mt-3">Um desenvolvedor que entende de negócio, não só de código</h2>
-                        <p class="about-text">Sou Glauber Barcelos — engenheiro de software com mais de 20 anos transformando problemas complexos em produtos digitais que funcionam. Ao longo da carreira, integrei times e projetos de diferentes portes: de startups buscando validar uma ideia, até soluções de saúde usadas por milhares de pessoas todos os dias.</p>
-                        <p class="about-text">Passei por cada camada do desenvolvimento: front-end, backend, banco de dados, mobile, integrações. Esse acúmulo de experiências é o que me permite hoje cuidar do seu projeto inteiro — sem precisar de uma equipe de 10 pessoas para resolver o que um profissional sênior experiente consegue endereçar.</p>
-                        <p class="about-text">Se você quer alguém que entende o negócio antes de escrever a primeira linha de código, que fala a sua língua, que entrega com clareza e que fica disponível do início ao fim — é isso que ofereço.</p>
+                        <span class="section-badge" data-i18n="about_badge">Sobre Mim</span>
+                        <h2 class="section-title mt-3" data-i18n="about_title">Um desenvolvedor que entende de negócio, não só de código</h2>
+                        <p class="about-text" data-i18n="about_p1">Sou Glauber Barcelos — engenheiro de software com mais de 20 anos transformando problemas complexos em produtos digitais que funcionam. Ao longo da carreira, integrei times e projetos de diferentes portes: de startups buscando validar uma ideia, até soluções de saúde usadas por milhares de pessoas todos os dias.</p>
+                        <p class="about-text" data-i18n="about_p2">Passei por cada camada do desenvolvimento: front-end, backend, banco de dados, mobile, integrações. Esse acúmulo de experiências é o que me permite hoje cuidar do seu projeto inteiro — sem precisar de uma equipe de 10 pessoas para resolver o que um profissional sênior experiente consegue endereçar.</p>
+                        <p class="about-text" data-i18n="about_p3">Se você quer alguém que entende o negócio antes de escrever a primeira linha de código, que fala a sua língua, que entrega com clareza e que fica disponível do início ao fim — é isso que ofereço.</p>
                         <a href="https://wa.me/5551980120387?text=Ol%C3%A1%20Glauber%2C%20quero%20conversar%20sobre%20meu%20projeto."
-                            target="_blank" rel="noopener" class="btn btn-primary-custom mt-3">
+                            target="_blank" rel="noopener" class="btn btn-primary-custom mt-3" data-i18n="about_cta">
                             <i class="fab fa-whatsapp mr-2"></i> Vamos conversar
                         </a>
                     </div>
@@ -364,9 +367,9 @@
         <section id="servicos" class="services-section">
             <div class="container">
                 <div class="section-header text-center">
-                    <span class="section-badge">Serviços</span>
-                    <h2 class="section-title mt-3">Tudo que o seu projeto precisa, em um único lugar</h2>
-                    <p class="section-subtitle mx-auto">Do front ao back, do web ao mobile — cubro todas as camadas do seu produto digital.</p>
+                    <span class="section-badge" data-i18n="svc_badge">Serviços</span>
+                    <h2 class="section-title mt-3" data-i18n="svc_title">Tudo que o seu projeto precisa, em um único lugar</h2>
+                    <p class="section-subtitle mx-auto" data-i18n="svc_subtitle">Do front ao back, do web ao mobile — cubro todas as camadas do seu produto digital.</p>
                 </div>
                 <div class="row mt-5">
                     <div class="col-lg-4 mb-4">
@@ -374,27 +377,27 @@
                             <div class="service-icon-box">
                                 <i class="fas fa-globe"></i>
                             </div>
-                            <h3>Desenvolvimento Web</h3>
-                            <p>Sites, sistemas e plataformas que funcionam e convertem. Do visual ao backend que sustenta tudo.</p>
+                            <h3 data-i18n="svc_web_title">Desenvolvimento Web</h3>
+                            <p data-i18n="svc_web_desc">Sites, sistemas e plataformas que funcionam e convertem. Do visual ao backend que sustenta tudo.</p>
                             <ul class="service-list">
-                                <li><i class="fas fa-check"></i> Landing pages e sites institucionais</li>
-                                <li><i class="fas fa-check"></i> Sistemas web e plataformas SaaS</li>
-                                <li><i class="fas fa-check"></i> Performance, SEO e acessibilidade</li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="svc_web_li1">Landing pages e sites institucionais</span></li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="svc_web_li2">Sistemas web e plataformas SaaS</span></li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="svc_web_li3">Performance, SEO e acessibilidade</span></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-4 mb-4">
                         <div class="service-card service-card--featured">
-                            <span class="service-featured-badge">Mais solicitado</span>
+                            <span class="service-featured-badge" data-i18n="svc_api_badge">Mais solicitado</span>
                             <div class="service-icon-box">
                                 <i class="fas fa-server"></i>
                             </div>
-                            <h3>Backend &amp; APIs</h3>
-                            <p>A estrutura que faz o seu produto funcionar de verdade. Banco de dados, lógica de negócio e integrações.</p>
+                            <h3 data-i18n="svc_api_title">Backend &amp; APIs</h3>
+                            <p data-i18n="svc_api_desc">A estrutura que faz o seu produto funcionar de verdade. Banco de dados, lógica de negócio e integrações.</p>
                             <ul class="service-list">
-                                <li><i class="fas fa-check"></i> APIs REST e integrações com terceiros</li>
-                                <li><i class="fas fa-check"></i> Banco de dados e arquitetura escalável</li>
-                                <li><i class="fas fa-check"></i> Segurança, performance e confiabilidade</li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="svc_api_li1">APIs REST e integrações com terceiros</span></li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="svc_api_li2">Banco de dados e arquitetura escalável</span></li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="svc_api_li3">Segurança, performance e confiabilidade</span></li>
                             </ul>
                         </div>
                     </div>
@@ -403,19 +406,19 @@
                             <div class="service-icon-box">
                                 <i class="fas fa-mobile-alt"></i>
                             </div>
-                            <h3>Aplicativos Mobile</h3>
-                            <p>Apps Android e iOS que chegam às lojas e ficam lá. Com experiência de uso real e estabilidade.</p>
+                            <h3 data-i18n="svc_mob_title">Aplicativos Mobile</h3>
+                            <p data-i18n="svc_mob_desc">Apps Android e iOS que chegam às lojas e ficam lá. Com experiência de uso real e estabilidade.</p>
                             <ul class="service-list">
-                                <li><i class="fas fa-check"></i> Android e iOS com base única</li>
-                                <li><i class="fas fa-check"></i> Publicação na App Store e Google Play</li>
-                                <li><i class="fas fa-check"></i> Geolocalização, notificações e offline</li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="svc_mob_li1">Android e iOS com base única</span></li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="svc_mob_li2">Publicação na App Store e Google Play</span></li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="svc_mob_li3">Geolocalização, notificações e offline</span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="text-center mt-2">
                     <a href="https://wa.me/5551980120387?text=Ol%C3%A1%20Glauber%2C%20quero%20solicitar%20meu%20projeto."
-                        target="_blank" rel="noopener" class="btn btn-primary-custom btn-lg">
+                        target="_blank" rel="noopener" class="btn btn-primary-custom btn-lg" data-i18n="svc_cta">
                         <i class="fab fa-whatsapp mr-2"></i> Vamos tirar sua ideia do papel
                     </a>
                 </div>
@@ -426,37 +429,37 @@
         <section id="processo" class="process-section section-alt">
             <div class="container">
                 <div class="section-header text-center">
-                    <span class="section-badge">Como Trabalho</span>
-                    <h2 class="section-title mt-3">Sem surpresas: cada etapa com clareza e resultado</h2>
-                    <p class="section-subtitle mx-auto">Cuido de todas as fases do projeto para que você acompanhe o progresso sem precisar entender de tecnologia.</p>
+                    <span class="section-badge" data-i18n="proc_badge">Como Trabalho</span>
+                    <h2 class="section-title mt-3" data-i18n="proc_title">Sem surpresas: cada etapa com clareza e resultado</h2>
+                    <p class="section-subtitle mx-auto" data-i18n="proc_subtitle">Cuido de todas as fases do projeto para que você acompanhe o progresso sem precisar entender de tecnologia.</p>
                 </div>
                 <div class="process-steps mt-5">
                     <div class="process-step">
                         <div class="process-num">01</div>
                         <div class="process-icon-box"><i class="fas fa-search"></i></div>
-                        <h4>Diagnóstico</h4>
-                        <p>Conversa rápida para entender seu negócio, suas dores e o que o projeto precisa resolver de verdade.</p>
+                        <h4 data-i18n="proc_1_title">Diagnóstico</h4>
+                        <p data-i18n="proc_1_desc">Conversa rápida para entender seu negócio, suas dores e o que o projeto precisa resolver de verdade.</p>
                     </div>
                     <div class="process-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></div>
                     <div class="process-step">
                         <div class="process-num">02</div>
                         <div class="process-icon-box"><i class="fas fa-map"></i></div>
-                        <h4>Planejamento</h4>
-                        <p>Escopo claro, prioridades definidas e MVP mapeado para validar rápido sem desperdiçar tempo ou dinheiro.</p>
+                        <h4 data-i18n="proc_2_title">Planejamento</h4>
+                        <p data-i18n="proc_2_desc">Escopo claro, prioridades definidas e MVP mapeado para validar rápido sem desperdiçar tempo ou dinheiro.</p>
                     </div>
                     <div class="process-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></div>
                     <div class="process-step">
                         <div class="process-num">03</div>
                         <div class="process-icon-box"><i class="fas fa-code"></i></div>
-                        <h4>Desenvolvimento</h4>
-                        <p>Construção com entregas visíveis em cada sprint, alinhamento constante e sem surpresas no final.</p>
+                        <h4 data-i18n="proc_3_title">Desenvolvimento</h4>
+                        <p data-i18n="proc_3_desc">Construção com entregas visíveis em cada sprint, alinhamento constante e sem surpresas no final.</p>
                     </div>
                     <div class="process-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></div>
                     <div class="process-step">
                         <div class="process-num">04</div>
                         <div class="process-icon-box"><i class="fas fa-rocket"></i></div>
-                        <h4>Entrega</h4>
-                        <p>Publicação, testes finais e suporte pós-lançamento. Fico disponível para garantir que funciona na prática.</p>
+                        <h4 data-i18n="proc_4_title">Entrega</h4>
+                        <p data-i18n="proc_4_desc">Publicação, testes finais e suporte pós-lançamento. Fico disponível para garantir que funciona na prática.</p>
                     </div>
                 </div>
             </div>
@@ -466,9 +469,9 @@
         <section id="cases" class="portfolio-section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-badge">Projetos</span>
-                    <h2 class="section-title mt-3">Resultados reais para problemas reais</h2>
-                    <p class="section-subtitle">Cada projeto foi construído do zero, com dedicação total e entrega de ponta a ponta.</p>
+                    <span class="section-badge" data-i18n="port_badge">Projetos</span>
+                    <h2 class="section-title mt-3" data-i18n="port_title">Resultados reais para problemas reais</h2>
+                    <p class="section-subtitle" data-i18n="port_subtitle">Cada projeto foi construído do zero, com dedicação total e entrega de ponta a ponta.</p>
                 </div>
 
                 <!-- MOBILE APPS -->
@@ -476,22 +479,22 @@
                     <div class="portfolio-group-header">
                         <div class="portfolio-group-icon"><i class="fas fa-mobile-alt"></i></div>
                         <div>
-                            <h3 class="portfolio-group-title">Aplicativos Mobile</h3>
-                            <p class="portfolio-group-desc">Apps Android e iOS publicados nas lojas, com foco em experiência real do usuário.</p>
+                            <h3 class="portfolio-group-title" data-i18n="port_mob_group_title">Aplicativos Mobile</h3>
+                            <p class="portfolio-group-desc" data-i18n="port_mob_group_desc">Apps Android e iOS publicados nas lojas, com foco em experiência real do usuário.</p>
                         </div>
                     </div>
                     <div class="projects-grid">
                         <article class="project-card">
                             <div class="project-img-wrapper" style="background:#fff5f5;">
-                                <span class="project-tag">Saúde emergencial · Mobile</span>
+                                <span class="project-tag" data-i18n="samu_tag">Saúde emergencial · Mobile</span>
                                 <img src="img/apps/samu/samu.webp" alt="App SAMU 192" class="project-img" loading="lazy" decoding="async">
                             </div>
                             <div class="project-body">
-                                <h3>SAMU 192</h3>
-                                <p>Contratado pela <strong>True Tecnologia</strong> para integrar o time de desenvolvimento do app oficial do SAMU 192 — solicitação de ambulância com geolocalização e acompanhamento em tempo real.</p>
+                                <h3 data-i18n="samu_title">SAMU 192</h3>
+                                <p data-i18n="samu_desc">Contratado pela <strong>True Tecnologia</strong> para integrar o time de desenvolvimento do app oficial do SAMU 192 — solicitação de ambulância com geolocalização e acompanhamento em tempo real.</p>
                                 <ul class="project-results">
-                                    <li><i class="fas fa-check"></i> Menos fricção no momento mais crítico</li>
-                                    <li><i class="fas fa-check"></i> Maior previsibilidade no atendimento</li>
+                                    <li><i class="fas fa-check"></i> <span data-i18n="samu_r1">Menos fricção no momento mais crítico</span></li>
+                                    <li><i class="fas fa-check"></i> <span data-i18n="samu_r2">Maior previsibilidade no atendimento</span></li>
                                 </ul>
                                 <div class="project-tags">
                                     <span>.NET MAUI</span>
@@ -504,15 +507,15 @@
 
                         <article class="project-card">
                             <div class="project-img-wrapper" style="background:#f0fdf4;">
-                                <span class="project-tag">Saúde corporativa · Mobile</span>
+                                <span class="project-tag" data-i18n="unimed_tag">Saúde corporativa · Mobile</span>
                                 <img src="img/apps/unimed/unnamed01.webp" alt="App Unimed" class="project-img" loading="lazy" decoding="async">
                             </div>
                             <div class="project-body">
-                                <h3>Unimed</h3>
-                                <p>Contratado pela <strong>True Tecnologia</strong> para atuar no desenvolvimento do app Unimed — plataforma de cobertura, autorizações e jornada digital do beneficiário.</p>
+                                <h3 data-i18n="unimed_title">Unimed</h3>
+                                <p data-i18n="unimed_desc">Contratado pela <strong>True Tecnologia</strong> para atuar no desenvolvimento do app Unimed — plataforma de cobertura, autorizações e jornada digital do beneficiário.</p>
                                 <ul class="project-results">
-                                    <li><i class="fas fa-check"></i> Jornada mais fluida para o usuário</li>
-                                    <li><i class="fas fa-check"></i> Operação com mais autonomia digital</li>
+                                    <li><i class="fas fa-check"></i> <span data-i18n="unimed_r1">Jornada mais fluida para o usuário</span></li>
+                                    <li><i class="fas fa-check"></i> <span data-i18n="unimed_r2">Operação com mais autonomia digital</span></li>
                                 </ul>
                                 <div class="project-tags">
                                     <span>.NET MAUI</span>
@@ -525,15 +528,15 @@
 
                         <article class="project-card">
                             <div class="project-img-wrapper" style="background:#fefce8;">
-                                <span class="project-tag">Startup · Mobile &amp; IA</span>
+                                <span class="project-tag" data-i18n="banana_tag">Startup · Mobile &amp; IA</span>
                                 <img src="img/apps/banana/20210620_020603000_iOS.jpg" alt="Banana Startups" class="project-img" loading="lazy" decoding="async">
                             </div>
                             <div class="project-body">
-                                <h3>Banana Startups</h3>
-                                <p>Match inteligente entre startups e investidores. Da ideia ao MVP com base escalável e validação de mercado.</p>
+                                <h3 data-i18n="banana_title">Banana Startups</h3>
+                                <p data-i18n="banana_desc">Match inteligente entre startups e investidores. Da ideia ao MVP com base escalável e validação de mercado.</p>
                                 <ul class="project-results">
-                                    <li><i class="fas fa-check"></i> Validação rápida da proposta de valor</li>
-                                    <li><i class="fas fa-check"></i> Base preparada para crescimento contínuo</li>
+                                    <li><i class="fas fa-check"></i> <span data-i18n="banana_r1">Validação rápida da proposta de valor</span></li>
+                                    <li><i class="fas fa-check"></i> <span data-i18n="banana_r2">Base preparada para crescimento contínuo</span></li>
                                 </ul>
                                 <div class="project-tags">
                                     <span>IA</span>
@@ -545,15 +548,15 @@
 
                         <article class="project-card">
                             <div class="project-img-wrapper" style="background:#1e0a3c;">
-                                <span class="project-tag">Segurança pública · Mobile</span>
+                                <span class="project-tag" data-i18n="lume_tag">Segurança pública · Mobile</span>
                                 <img src="img/apps/lps/lume.jpeg" alt="Lume — App de proteção para mulheres" class="project-img" loading="lazy" decoding="async">
                             </div>
                             <div class="project-body">
-                                <h3>Lume</h3>
-                                <p>App de proteção para mulheres em situação de risco. Com um toque, a vítima dispara um SOS que conecta policiais próximos em tempo real via Lume Force — sem intermediários, sem cancelamento por coação.</p>
+                                <h3 data-i18n="lume_title">Lume</h3>
+                                <p data-i18n="lume_desc">App de proteção para mulheres em situação de risco. Com um toque, a vítima dispara um SOS que conecta policiais próximos em tempo real via Lume Force — sem intermediários, sem cancelamento por coação.</p>
                                 <ul class="project-results">
-                                    <li><i class="fas fa-check"></i> SOS irreversível e rastreamento ativo</li>
-                                    <li><i class="fas fa-check"></i> Conexão direta vítima ↔ policial em segundos</li>
+                                    <li><i class="fas fa-check"></i> <span data-i18n="lume_r1">SOS irreversível e rastreamento ativo</span></li>
+                                    <li><i class="fas fa-check"></i> <span data-i18n="lume_r2">Conexão direta vítima ↔ policial em segundos</span></li>
                                 </ul>
                                 <div class="project-tags">
                                     <span>.NET MAUI</span>
@@ -571,22 +574,22 @@
                     <div class="portfolio-group-header">
                         <div class="portfolio-group-icon"><i class="fas fa-globe"></i></div>
                         <div>
-                            <h3 class="portfolio-group-title">Web &amp; Landing Pages</h3>
-                            <p class="portfolio-group-desc">Sites e páginas de conversão que geram leads, vendem e representam marcas com clareza.</p>
+                            <h3 class="portfolio-group-title" data-i18n="port_web_group_title">Web &amp; Landing Pages</h3>
+                            <p class="portfolio-group-desc" data-i18n="port_web_group_desc">Sites e páginas de conversão que geram leads, vendem e representam marcas com clareza.</p>
                         </div>
                     </div>
                     <div class="projects-grid">
                         <article class="project-card">
                             <div class="project-img-wrapper" style="background:#2c1a0e;">
-                                <span class="project-tag">Franquia · Landing Page</span>
+                                <span class="project-tag" data-i18n="streetme_tag">Franquia · Landing Page</span>
                                 <img src="img/apps/lps/streetme.png" alt="StreetMe — Franquia de Cafés Especiais" class="project-img" loading="lazy" decoding="async">
                             </div>
                             <div class="project-body">
-                                <h3>StreetMe Cafés</h3>
-                                <p>Landing page de captação de franqueados para a rede de cafés especiais StreetMe. Foco em conversão, prova de mercado e geração de leads qualificados.</p>
+                                <h3 data-i18n="streetme_title">StreetMe Cafés</h3>
+                                <p data-i18n="streetme_desc">Landing page de captação de franqueados para a rede de cafés especiais StreetMe. Foco em conversão, prova de mercado e geração de leads qualificados.</p>
                                 <ul class="project-results">
-                                    <li><i class="fas fa-check"></i> Apresentação clara do modelo de negócio</li>
-                                    <li><i class="fas fa-check"></i> Fluxo de conversão do visitante ao lead</li>
+                                    <li><i class="fas fa-check"></i> <span data-i18n="streetme_r1">Apresentação clara do modelo de negócio</span></li>
+                                    <li><i class="fas fa-check"></i> <span data-i18n="streetme_r2">Fluxo de conversão do visitante ao lead</span></li>
                                 </ul>
                                 <div class="project-tags">
                                     <span>Landing Page</span>
@@ -598,15 +601,15 @@
 
                         <article class="project-card">
                             <div class="project-img-wrapper" style="background:#0d3d3a;">
-                                <span class="project-tag">Franquia · Landing Page</span>
+                                <span class="project-tag" data-i18n="turquesa_tag">Franquia · Landing Page</span>
                                 <img src="img/apps/lps/turquesa.jpg" alt="Turquesa Bem Estar — Franquia de Salões de Beleza" class="project-img" loading="lazy" decoding="async">
                             </div>
                             <div class="project-body">
-                                <h3>Turquesa Bem Estar</h3>
-                                <p>Landing page de expansão de franquias para a rede de salões Turquesa, com 12+ anos de mercado. Posicionamento premium e captação de franqueados nas modalidades Nails, Hair e Beauty.</p>
+                                <h3 data-i18n="turquesa_title">Turquesa Bem Estar</h3>
+                                <p data-i18n="turquesa_desc">Landing page de expansão de franquias para a rede de salões Turquesa, com 12+ anos de mercado. Posicionamento premium e captação de franqueados nas modalidades Nails, Hair e Beauty.</p>
                                 <ul class="project-results">
-                                    <li><i class="fas fa-check"></i> Posicionamento premium e diferenciado</li>
-                                    <li><i class="fas fa-check"></i> Apresentação dos 3 modelos de investimento</li>
+                                    <li><i class="fas fa-check"></i> <span data-i18n="turquesa_r1">Posicionamento premium e diferenciado</span></li>
+                                    <li><i class="fas fa-check"></i> <span data-i18n="turquesa_r2">Apresentação dos 3 modelos de investimento</span></li>
                                 </ul>
                                 <div class="project-tags">
                                     <span>Landing Page</span>
@@ -618,15 +621,15 @@
 
                         <article class="project-card">
                             <div class="project-img-wrapper" style="background:#0a1628;">
-                                <span class="project-tag">SaaS · Landing Page</span>
+                                <span class="project-tag" data-i18n="nativeip_tag">SaaS · Landing Page</span>
                                 <img src="img/apps/lps/nativeip.png" alt="Native IP — Plataforma para Provedores de Internet" class="project-img" loading="lazy" decoding="async">
                             </div>
                             <div class="project-body">
-                                <h3>Native IP</h3>
-                                <p>Landing page para plataforma SaaS especializada em provedores de internet (ISPs). Comunicação técnica traduzida em benefícios claros: redução de inadimplência, atendimento 24h e mais controle operacional.</p>
+                                <h3 data-i18n="nativeip_title">Native IP</h3>
+                                <p data-i18n="nativeip_desc">Landing page para plataforma SaaS especializada em provedores de internet (ISPs). Comunicação técnica traduzida em benefícios claros: redução de inadimplência, atendimento 24h e mais controle operacional.</p>
                                 <ul class="project-results">
-                                    <li><i class="fas fa-check"></i> Comunicação técnica acessível ao decisor</li>
-                                    <li><i class="fas fa-check"></i> Conversão para demo e contato comercial</li>
+                                    <li><i class="fas fa-check"></i> <span data-i18n="nativeip_r1">Comunicação técnica acessível ao decisor</span></li>
+                                    <li><i class="fas fa-check"></i> <span data-i18n="nativeip_r2">Conversão para demo e contato comercial</span></li>
                                 </ul>
                                 <div class="project-tags">
                                     <span>Landing Page</span>
@@ -638,15 +641,15 @@
 
                         <article class="project-card">
                             <div class="project-img-wrapper" style="background:#0f0f1a;">
-                                <span class="project-tag">Evento · Landing Page</span>
+                                <span class="project-tag" data-i18n="emp_tag">Evento · Landing Page</span>
                                 <img src="img/apps/lps/empreender40.jpg" alt="Summit Empreender 40+ — Porto Alegre" class="project-img" loading="lazy" decoding="async">
                             </div>
                             <div class="project-body">
-                                <h3>Empreender 40+</h3>
-                                <p>Site oficial do Summit Empreender 40+ — evento presencial em Porto Alegre com 25 palestrantes de renome nacional. Página de inscrições com contagem regressiva, line-up e geração de leads.</p>
+                                <h3 data-i18n="emp_title">Empreender 40+</h3>
+                                <p data-i18n="emp_desc">Site oficial do Summit Empreender 40+ — evento presencial em Porto Alegre com 25 palestrantes de renome nacional. Página de inscrições com contagem regressiva, line-up e geração de leads.</p>
                                 <ul class="project-results">
-                                    <li><i class="fas fa-check"></i> Apresentação do line-up e credibilidade do evento</li>
-                                    <li><i class="fas fa-check"></i> Conversão de visitantes em inscritos</li>
+                                    <li><i class="fas fa-check"></i> <span data-i18n="emp_r1">Apresentação do line-up e credibilidade do evento</span></li>
+                                    <li><i class="fas fa-check"></i> <span data-i18n="emp_r2">Conversão de visitantes em inscritos</span></li>
                                 </ul>
                                 <div class="project-tags">
                                     <span>Landing Page</span>
@@ -665,15 +668,15 @@
         <section class="cta-final-section">
             <div class="container">
                 <div class="cta-final-inner text-center">
-                    <span class="cta-final-badge">Próximo passo</span>
-                    <h2>Sua ideia merece se tornar realidade</h2>
-                    <p>Me conta o que você quer construir. Em menos de 24h te dou um retorno com os próximos passos.</p>
+                    <span class="cta-final-badge" data-i18n="cta_badge">Próximo passo</span>
+                    <h2 data-i18n="cta_title">Sua ideia merece se tornar realidade</h2>
+                    <p data-i18n="cta_desc">Me conta o que você quer construir. Em menos de 24h te dou um retorno com os próximos passos.</p>
                     <div class="cta-final-btns">
                         <a href="https://wa.me/5551980120387?text=Ol%C3%A1%20Glauber%2C%20quero%20solicitar%20meu%20projeto."
-                            target="_blank" rel="noopener" class="btn btn-cta-white">
+                            target="_blank" rel="noopener" class="btn btn-cta-white" data-i18n="cta_wa">
                             <i class="fab fa-whatsapp mr-2"></i> Vamos tirar sua ideia do papel
                         </a>
-                        <a href="#contato" class="btn btn-cta-outline">Enviar mensagem</a>
+                        <a href="#contato" class="btn btn-cta-outline" data-i18n="cta_msg">Enviar mensagem</a>
                     </div>
                 </div>
             </div>
@@ -683,32 +686,38 @@
         <section id="contato" class="contact-section section-alt">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-badge">Contato</span>
-                    <h2 class="section-title mt-3">Vamos conversar sobre o seu projeto</h2>
-                    <p class="section-subtitle">Preencha o formulário e entro em contato rapidamente. Sem enrolação.</p>
+                    <span class="section-badge" data-i18n="contact_badge">Contato</span>
+                    <h2 class="section-title mt-3" data-i18n="contact_title">Vamos conversar sobre o seu projeto</h2>
+                    <p class="section-subtitle" data-i18n="contact_subtitle">Preencha o formulário e entro em contato rapidamente. Sem enrolação.</p>
                 </div>
                 <div class="row mt-5">
                     <div class="col-lg-7 mb-5 mb-lg-0">
                         <form class="contact-form" id="contactForm" novalidate>
                             <div class="form-group">
-                                <label for="name">Nome</label>
+                                <label for="name" data-i18n="contact_name_label">Nome</label>
                                 <input type="text" class="form-control" id="name" name="name"
+                                    data-i18n-attr="placeholder" data-i18n="contact_name_ph"
                                     placeholder="Seu nome completo" required>
                             </div>
                             <div class="form-group">
-                                <label for="contact">WhatsApp <span class="label-hint">— vou te chamar por aqui</span></label>
+                                <label for="contact">
+                                    <span data-i18n="contact_wa_label">WhatsApp</span>
+                                    <span class="label-hint" data-i18n="contact_wa_hint"> — vou te chamar por aqui</span>
+                                </label>
                                 <div class="input-icon-wrapper">
                                     <i class="fab fa-whatsapp input-icon"></i>
                                     <input type="tel" class="form-control input-with-icon" id="contact" name="contact"
+                                        data-i18n-attr="placeholder" data-i18n="contact_wa_ph"
                                         placeholder="(00) 00000-0000" maxlength="15" autocomplete="tel" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="message">O que você quer construir?</label>
+                                <label for="message" data-i18n="contact_msg_label">O que você quer construir?</label>
                                 <textarea class="form-control" id="message" name="message" rows="5"
+                                    data-i18n-attr="placeholder" data-i18n="contact_msg_ph"
                                     placeholder="Descreva sua ideia ou o problema que quer resolver..." required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary-custom btn-lg">Enviar mensagem</button>
+                            <button type="submit" class="btn btn-primary-custom btn-lg" data-i18n="contact_submit">Enviar mensagem</button>
                             <div id="formStatus" class="form-status mt-3" aria-live="polite"></div>
                         </form>
                     </div>
@@ -716,22 +725,22 @@
                         <div class="contact-info-card">
                             <i class="fab fa-whatsapp"></i>
                             <div>
-                                <h5>WhatsApp</h5>
+                                <h5 data-i18n="contact_info_wa">WhatsApp</h5>
                                 <a href="https://wa.me/5551980120387" target="_blank" rel="noopener">+55 (51) 98012-0387</a>
                             </div>
                         </div>
                         <div class="contact-info-card">
                             <i class="fas fa-envelope"></i>
                             <div>
-                                <h5>E-mail</h5>
+                                <h5 data-i18n="contact_info_email">E-mail</h5>
                                 <a href="mailto:ggbarcelos@gmail.com">ggbarcelos@gmail.com</a>
                             </div>
                         </div>
                         <div class="contact-info-card">
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
-                                <h5>Atendimento</h5>
-                                <span>Remoto para todo o Brasil</span>
+                                <h5 data-i18n="contact_info_region">Atendimento</h5>
+                                <span data-i18n="contact_region_val">Remoto para todo o Brasil</span>
                             </div>
                         </div>
                         <div class="contact-social mt-4">
@@ -750,7 +759,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-inner">
-                <p class="footer-copy">© 2026 Glauber Barcelos. Todos os direitos reservados.</p>
+                <p class="footer-copy" data-i18n="footer_copy">© 2026 Glauber Barcelos. Todos os direitos reservados.</p>
                 <div class="footer-social">
                     <a href="https://www.linkedin.com/in/glauber-gomes-barcelos-5b517a381/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="https://www.instagram.com/glauberbarcelos.dev/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
@@ -764,7 +773,7 @@
     <a href="https://wa.me/5551980120387?text=Ol%C3%A1%20Glauber%2C%20quero%20solicitar%20meu%20projeto."
         target="_blank" rel="noopener" class="whatsapp-float" title="Fale pelo WhatsApp" aria-label="Fale pelo WhatsApp">
         <i class="fab fa-whatsapp"></i>
-        <span class="whatsapp-float-label">Vamos tirar sua ideia do papel</span>
+        <span class="whatsapp-float-label" data-i18n="wa_float_label">Vamos tirar sua ideia do papel</span>
     </a>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -772,6 +781,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>emailjs.init({ publicKey: 'xAtMa5JUwZUvcGnXw' });</script>
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

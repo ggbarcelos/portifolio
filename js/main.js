@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Apply language on load
+    if (window.__i18n) {
+        window.__i18n.applyLang(window.__i18n.detectLang());
+    }
+
+    const t = () => window.__i18n
+        ? window.__i18n.translations[localStorage.getItem('gb_lang') || window.__i18n.detectLang()]
+        : {};
     const navbar = document.querySelector('.navbar-custom');
     const contactForm = document.getElementById('contactForm');
     const navLinks = document.querySelectorAll('.navbar-custom .nav-link');
@@ -89,11 +97,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 message: messageField?.value.trim() || ''
             };
 
+            const tr = t();
             const errors = {
-                name:    values.name.length < 3 ? 'Informe seu nome completo.' : '',
+                name:    values.name.length < 3 ? (tr.err_name || 'Informe seu nome completo.') : '',
                 contact: rawPhone.length < 10 || rawPhone.length > 11
-                            ? 'Informe um número de WhatsApp válido, ex: (51) 98012-0387.' : '',
-                message: values.message.length < 10 ? 'Conte um pouco mais sobre a sua ideia.' : ''
+                            ? (tr.err_contact || 'Informe um número de WhatsApp válido, ex: (51) 98012-0387.') : '',
+                message: values.message.length < 10 ? (tr.err_message || 'Conte um pouco mais sobre a sua ideia.') : ''
             };
 
             setFieldState(nameField, errors.name);
@@ -102,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const hasErrors = Object.values(errors).some(Boolean);
             if (hasErrors) {
-                showFormStatus('Revise os campos destacados e tente novamente.', 'error');
+                showFormStatus(tr.err_fields || 'Revise os campos destacados e tente novamente.', 'error');
                 return;
             }
 
@@ -112,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitButton.textContent = 'Enviando...';
             }
 
-            showFormStatus('Enviando mensagem...', 'info');
+            showFormStatus(tr.sending || 'Enviando mensagem...', 'info');
 
             emailjs.send('service_1u29mnn', 'template_776y0px', {
                 name:    values.name,
@@ -125,7 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 to_name:     'Glauber'
             })
                 .then(() => {
-                    showFormStatus('Mensagem enviada! Vou te chamar no WhatsApp em breve. 🚀', 'success');
+                    const tr2 = t();
+                    showFormStatus(tr2.sent_ok || 'Mensagem enviada! Vou te chamar no WhatsApp em breve. 🚀', 'success');
                     contactForm.reset();
                 })
                 .catch((error) => {
@@ -135,9 +145,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     showFormStatus(`Erro ao enviar (${error?.status}: ${error?.text}). Tente novamente.`, 'error');
                 })
                 .finally(() => {
+                    const tr3 = t();
                     if (submitButton) {
                         submitButton.disabled = false;
-                        submitButton.textContent = submitButton.dataset.originalText || 'Enviar mensagem';
+                        submitButton.textContent = tr3.send_btn_original || submitButton.dataset.originalText || 'Enviar mensagem';
                     }
                 });
         });

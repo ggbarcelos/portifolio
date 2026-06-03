@@ -218,6 +218,24 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .navbar-toggler { border: none; padding: 0.4rem; }
 .navbar-toggler:focus { outline: none; box-shadow: none; }
+.btn-lang {
+    background: none;
+    border: 1.5px solid var(--primary);
+    color: var(--primary);
+    font-family: var(--font);
+    font-size: 0.78rem;
+    font-weight: 600;
+    border-radius: 100px;
+    padding: 0.28em 0.85em;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-left: 0.5rem;
+    line-height: 1.4;
+}
+.btn-lang:hover {
+    background: var(--primary);
+    color: #fff;
+}
 
 /* ===================================
    HERO SECTION
