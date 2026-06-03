@@ -855,6 +855,27 @@ img { max-width: 100%; height: auto; display: block; }
     margin-bottom: 0.4rem;
     display: block;
 }
+.contact-form label .label-hint {
+    font-weight: 400;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+.input-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.input-icon-wrapper .input-icon {
+    position: absolute;
+    left: 0.9rem;
+    color: #25d366;
+    font-size: 1.1rem;
+    pointer-events: none;
+    z-index: 1;
+}
+.input-icon-wrapper .input-with-icon {
+    padding-left: 2.5rem !important;
+}
 .contact-form .form-control {
     font-family: var(--font);
     border: 1.5px solid var(--border);

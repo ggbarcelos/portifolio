@@ -63,13 +63,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (contactForm) {
         const submitButton = contactForm.querySelector('button[type="submit"]');
+        const contactField = document.getElementById('contact');
+
+        // Phone mask: (XX) XXXXX-XXXX
+        if (contactField) {
+            contactField.addEventListener('input', () => {
+                let v = contactField.value.replace(/\D/g, '').slice(0, 11);
+                if (v.length <= 2)       contactField.value = v.length ? `(${v}` : '';
+                else if (v.length <= 7)  contactField.value = `(${v.slice(0,2)}) ${v.slice(2)}`;
+                else if (v.length <= 11) contactField.value = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+            });
+        }
 
         contactForm.addEventListener('submit', e => {
             e.preventDefault();
 
             const nameField = document.getElementById('name');
-            const contactField = document.getElementById('contact');
             const messageField = document.getElementById('message');
+
+            const rawPhone = (contactField?.value || '').replace(/\D/g, '');
 
             const values = {
                 name: nameField?.value.trim() || '',
@@ -78,8 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             const errors = {
-                name: values.name.length < 3 ? 'Informe seu nome completo.' : '',
-                contact: values.contact.length < 5 ? 'Informe seu WhatsApp ou e-mail.' : '',
+                name:    values.name.length < 3 ? 'Informe seu nome completo.' : '',
+                contact: rawPhone.length < 10 || rawPhone.length > 11
+                            ? 'Informe um número de WhatsApp válido, ex: (51) 98012-0387.' : '',
                 message: values.message.length < 10 ? 'Conte um pouco mais sobre a sua ideia.' : ''
             };
 
@@ -103,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             emailjs.sendForm('service_1u29mnn', 'template_776y0px', contactForm)
                 .then(() => {
-                    showFormStatus('Mensagem enviada com sucesso! Em breve entrarei em contato.', 'success');
+                    showFormStatus('Mensagem enviada! Vou te chamar no WhatsApp em breve. 🚀', 'success');
                     contactForm.reset();
                 })
                 .catch((error) => {
