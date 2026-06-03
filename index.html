@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvimento Web, Backend e Mobile | Glauber Barcelos</title>
+    <meta name="description" content="Glauber Barcelos — Engenheiro de software sênior com 20+ anos. Projetos completos: web, backend e mobile do início ao fim, sem terceiros, sem surpresas.">
+    <meta name="keywords" content="desenvolvimento web, backend, apis, mobile, android, ios, sistemas, saas, glauber barcelos, porto alegre">
+    <link rel="canonical" href="https://glauberbarcelos.com.br/">
+
+    <meta property="og:site_name" content="Glauber Barcelos">
+    <meta property="og:title" content="Da ideia ao produto digital: Web, Backend e Mobile">
+    <meta property="og:description" content="Projetos tecnológicos completos do início ao fim. Web, Backend e Mobile em um único parceiro.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://glauberbarcelos.com.br/">
+    <meta property="og:image" content="https://glauberbarcelos.com.br/img/glauber.jpeg">
+    <meta property="og:image:alt" content="Glauber Barcelos">
+    <meta property="og:locale" content="pt_BR">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Da ideia ao produto digital: Web, Backend e Mobile">
+    <meta name="twitter:description" content="Projetos completos do início ao fim. Engenheiro sênior com 20+ anos de experiência.">
+    <meta name="twitter:image" content="https://glauberbarcelos.com.br/img/glauber.jpeg">
+
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://glauberbarcelos.com.br/#pessoa",
+          "name": "Glauber Barcelos",
+          "jobTitle": "Engenheiro de Software Senior",
+          "url": "https://glauberbarcelos.com.br/",
+          "image": "https://glauberbarcelos.com.br/img/glauber.jpeg",
+          "telephone": "+5551980120387",
+          "email": "ggbarcelos@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Porto Alegre",
+            "addressRegion": "RS",
+            "addressCountry": "BR"
+          }
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://glauberbarcelos.com.br/#servico",
+          "name": "Glauber Barcelos - Desenvolvimento de Software",
+          "description": "Desenvolvimento de projetos completos: web, backend e mobile do início ao fim.",
+          "provider": { "@id": "https://glauberbarcelos.com.br/#pessoa" },
+          "areaServed": { "@type": "Country", "name": "Brasil" },
+          "serviceType": ["Desenvolvimento Web", "Backend", "Desenvolvimento Mobile", "APIs"]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Quanto tempo leva para um MVP?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Em geral entre 4 e 8 semanas, dependendo do escopo e das integrações."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Você desenvolve para Android e iOS?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim. Trabalho com desenvolvimento multiplataforma para Android e iOS, além de sistemas web e backend."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="img/logo.png" alt="Glauber Barcelos" class="navbar-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#processo">Processo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cases">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-star"></i>
+                        <span>Engenheiro Sênior · 20+ anos de experiência</span>
+                    </div>
+                    <h1 class="hero-title">Da ideia ao produto digital: <span class="hero-highlight">Web, Backend e Mobile</span> do início ao fim</h1>
+                    <p class="hero-subtitle">Entendo a dor real do seu negócio e entrego a solução tecnológica completa — sem terceiros, sem surpresas.</p>
+                    <div class="hero-benefits">
+                        <div class="hero-benefit"><i class="fas fa-check-circle"></i><span>Do diagnóstico à publicação final</span></div>
+                        <div class="hero-benefit"><i class="fas fa-check-circle"></i><span>Web, Backend e Mobile em um único parceiro</span></div>
+                        <div class="hero-benefit"><i class="fas fa-check-circle"></i><span>Foco em resultado, não só em código</span></div>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="https://wa.me/5551980120387?text=Ol%C3%A1%20Glauber%2C%20quero%20solicitar%20meu%20projeto."
+                            target="_blank" rel="noopener" class="btn btn-hero">
+                            <i class="fab fa-whatsapp"></i> Solicite seu projeto agora
+                        </a>
+                        <a href="#sobre" class="btn btn-hero-outline">Saiba mais</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 hero-image-col">
+                    <div class="hero-image-wrapper">
+                        <img src="img/glauber.jpeg" alt="Glauber Barcelos — Desenvolvedor Web, Backend e Mobile"
+                            class="hero-profile-img" fetchpriority="high">
+                        <div class="hero-float-card card-top">
+                            <div class="float-icon"><i class="fas fa-code"></i></div>
+                            <div class="float-text">
+                                <strong>20+ anos</strong>
+                                <small>de experiência</small>
+                            </div>
+                        </div>
+                        <div class="hero-float-card card-bottom">
+                            <div class="float-icon"><i class="fas fa-rocket"></i></div>
+                            <div class="float-text">
+                                <strong>100+ projetos</strong>
+                                <small>entregues</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-hint" aria-hidden="true">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
+
+    <!-- SOCIAL PROOF STRIP -->
+    <section class="proof-strip" aria-label="Clientes e projetos">
+        <div class="container">
+            <div class="proof-strip-inner">
+                <span class="proof-strip-label">Projetos entregues para:</span>
+                <div class="proof-strip-logos">
+                    <div class="proof-strip-track">
+                        <span class="proof-strip-item"><i class="fas fa-heartbeat"></i> SAMU 192</span>
+                        <span class="proof-strip-item"><i class="fas fa-hospital"></i> Unimed</span>
+                        <span class="proof-strip-item"><i class="fas fa-seedling"></i> Banana Startups</span>
+                        <span class="proof-strip-item"><i class="fas fa-coffee"></i> StreetMe</span>
+                        <span class="proof-strip-item"><i class="fas fa-satellite-dish"></i> True Technology</span>
+                        <span class="proof-strip-item"><i class="fas fa-heartbeat"></i> SAMU 192</span>
+                        <span class="proof-strip-item"><i class="fas fa-hospital"></i> Unimed</span>
+                        <span class="proof-strip-item"><i class="fas fa-seedling"></i> Banana Startups</span>
+                        <span class="proof-strip-item"><i class="fas fa-coffee"></i> StreetMe</span>
+                        <span class="proof-strip-item"><i class="fas fa-satellite-dish"></i> True Technology</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+
+        <!-- SOBRE MIM -->
+        <section id="sobre" class="about-section section-alt">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 mb-5 mb-lg-0">
+                        <div class="about-img-wrapper">
+                            <img src="img/glauber2.png" alt="Glauber Barcelos" class="about-img" loading="lazy" decoding="async">
+                            <div class="about-stats-bar">
+                                <div class="about-stat">
+                                    <span class="about-stat-num">20+</span>
+                                    <span class="about-stat-lbl">anos</span>
+                                </div>
+                                <div class="about-stat-sep"></div>
+                                <div class="about-stat">
+                                    <span class="about-stat-num">100+</span>
+                                    <span class="about-stat-lbl">projetos</span>
+                                </div>
+                                <div class="about-stat-sep"></div>
+                                <div class="about-stat">
+                                    <span class="about-stat-num">3</span>
+                                    <span class="about-stat-lbl">plataformas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 offset-lg-1">
+                        <span class="section-badge">Sobre Mim</span>
+                        <h2 class="section-title mt-3">Um desenvolvedor que entende de negócio, não só de código</h2>
+                        <p class="about-text">Sou Glauber Barcelos, engenheiro de software sênior com mais de 20 anos desenvolvendo produtos digitais para empresas como SAMU 192, Unimed e startups que precisavam sair da ideia para o mercado.</p>
+                        <p class="about-text">Meu diferencial é simples: acompanho o projeto do início ao fim. Você não precisa contratar uma agência, lidar com múltiplos fornecedores ou explicar tudo para 5 pessoas diferentes. Eu cuido de tudo — da estratégia ao código, do banco de dados ao app nas lojas.</p>
+                        <p class="about-text">Se você quer clareza, previsibilidade e uma solução que realmente resolve o seu problema, estou aqui.</p>
+                        <a href="https://wa.me/5551980120387?text=Ol%C3%A1%20Glauber%2C%20quero%20conversar%20sobre%20meu%20projeto."
+                            target="_blank" rel="noopener" class="btn btn-primary-custom mt-3">
+                            <i class="fab fa-whatsapp mr-2"></i> Vamos conversar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVIÇOS -->
+        <section id="servicos" class="services-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge">Serviços</span>
+                    <h2 class="section-title mt-3">Tudo que o seu projeto precisa, em um único lugar</h2>
+                    <p class="section-subtitle mx-auto">Do front ao back, do web ao mobile — cubro todas as camadas do seu produto digital.</p>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-4 mb-4">
+                        <div class="service-card">
+                            <div class="service-icon-box">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3>Desenvolvimento Web</h3>
+                            <p>Sites, sistemas e plataformas que funcionam e convertem. Do visual ao backend que sustenta tudo.</p>
+                            <ul class="service-list">
+                                <li><i class="fas fa-check"></i> Landing pages e sites institucionais</li>
+                                <li><i class="fas fa-check"></i> Sistemas web e plataformas SaaS</li>
+                                <li><i class="fas fa-check"></i> Performance, SEO e acessibilidade</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="service-card service-card--featured">
+                            <span class="service-featured-badge">Mais solicitado</span>
+                            <div class="service-icon-box">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3>Backend &amp; APIs</h3>
+                            <p>A estrutura que faz o seu produto funcionar de verdade. Banco de dados, lógica de negócio e integrações.</p>
+                            <ul class="service-list">
+                                <li><i class="fas fa-check"></i> APIs REST e integrações com terceiros</li>
+                                <li><i class="fas fa-check"></i> Banco de dados e arquitetura escalável</li>
+                                <li><i class="fas fa-check"></i> Segurança, performance e confiabilidade</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="service-card">
+                            <div class="service-icon-box">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>Aplicativos Mobile</h3>
+                            <p>Apps Android e iOS que chegam às lojas e ficam lá. Com experiência de uso real e estabilidade.</p>
+                            <ul class="service-list">
+                                <li><i class="fas fa-check"></i> Android e iOS com base única</li>
+                                <li><i class="fas fa-check"></i> Publicação na App Store e Google Play</li>
+                                <li><i class="fas fa-check"></i> Geolocalização, notificações e offline</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-2">
+                    <a href="https://wa.me/5551980120387?text=Ol%C3%A1%20Glauber%2C%20quero%20solicitar%20meu%20projeto."
+                        target="_blank" rel="noopener" class="btn btn-primary-custom btn-lg">
+                        <i class="fab fa-whatsapp mr-2"></i> Solicite seu projeto agora
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESSO -->
+        <section id="processo" class="process-section section-alt">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge">Como Trabalho</span>
+                    <h2 class="section-title mt-3">Sem surpresas: cada etapa com clareza e resultado</h2>
+                    <p class="section-subtitle mx-auto">Cuido de todas as fases do projeto para que você acompanhe o progresso sem precisar entender de tecnologia.</p>
+                </div>
+                <div class="process-steps mt-5">
+                    <div class="process-step">
+                        <div class="process-num">01</div>
+                        <div class="process-icon-box"><i class="fas fa-search"></i></div>
+                        <h4>Diagnóstico</h4>
+                        <p>Conversa rápida para entender seu negócio, suas dores e o que o projeto precisa resolver de verdade.</p>
+                    </div>
+                    <div class="process-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></div>
+                    <div class="process-step">
+                        <div class="process-num">02</div>
+                        <div class="process-icon-box"><i class="fas fa-map"></i></div>
+                        <h4>Planejamento</h4>
+                        <p>Escopo claro, prioridades definidas e MVP mapeado para validar rápido sem desperdiçar tempo ou dinheiro.</p>
+                    </div>
+                    <div class="process-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></div>
+                    <div class="process-step">
+                        <div class="process-num">03</div>
+                        <div class="process-icon-box"><i class="fas fa-code"></i></div>
+                        <h4>Desenvolvimento</h4>
+                        <p>Construção com entregas visíveis em cada sprint, alinhamento constante e sem surpresas no final.</p>
+                    </div>
+                    <div class="process-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></div>
+                    <div class="process-step">
+                        <div class="process-num">04</div>
+                        <div class="process-icon-box"><i class="fas fa-rocket"></i></div>
+                        <h4>Entrega</h4>
+                        <p>Publicação, testes finais e suporte pós-lançamento. Fico disponível para garantir que funciona na prática.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFÓLIO -->
+        <section id="cases" class="portfolio-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Projetos</span>
+                    <h2 class="section-title mt-3">Resultados reais para problemas reais</h2>
+                    <p class="section-subtitle">Cada projeto foi construído do zero, com dedicação total e entrega de ponta a ponta.</p>
+                </div>
+                <div class="projects-grid mt-5">
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                            <span class="project-tag">Saúde emergencial · Mobile</span>
+                            <img src="img/apps/samu/samu.webp" alt="App SAMU 192" class="project-img" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-body">
+                            <h3>SAMU 192</h3>
+                            <p>Solicitação de ambulância com geolocalização e acompanhamento em tempo real. Menos fricção na hora mais crítica.</p>
+                            <ul class="project-results">
+                                <li><i class="fas fa-check"></i> Redução de fricção no acionamento</li>
+                                <li><i class="fas fa-check"></i> Maior previsibilidade no atendimento</li>
+                            </ul>
+                            <div class="project-tags">
+                                <span>.NET MAUI</span>
+                                <span>Real-time</span>
+                                <span>Maps</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                            <span class="project-tag">Saúde corporativa · Mobile</span>
+                            <img src="img/apps/unimed/unnamed01.webp" alt="App Unimed" class="project-img" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-body">
+                            <h3>Unimed</h3>
+                            <p>Plataforma para cobertura, autorizações e jornada digital completa do beneficiário. Mais autonomia, menos suporte.</p>
+                            <ul class="project-results">
+                                <li><i class="fas fa-check"></i> Jornada mais fluida para o usuário</li>
+                                <li><i class="fas fa-check"></i> Operação com mais autonomia digital</li>
+                            </ul>
+                            <div class="project-tags">
+                                <span>.NET MAUI</span>
+                                <span>APIs</span>
+                                <span>Offline Sync</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                            <span class="project-tag">Startup · Web &amp; Mobile</span>
+                            <img src="img/apps/banana/20210620_020603000_iOS.jpg" alt="Banana Startups" class="project-img" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-body">
+                            <h3>Banana Startups</h3>
+                            <p>Match inteligente entre startups e investidores. Da ideia ao MVP com base escalável e validação de mercado.</p>
+                            <ul class="project-results">
+                                <li><i class="fas fa-check"></i> Validação rápida da proposta de valor</li>
+                                <li><i class="fas fa-check"></i> Base preparada para crescimento contínuo</li>
+                            </ul>
+                            <div class="project-tags">
+                                <span>IA</span>
+                                <span>Matching</span>
+                                <span>Growth</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="cta-final-section">
+            <div class="container">
+                <div class="cta-final-inner text-center">
+                    <span class="cta-final-badge">Próximo passo</span>
+                    <h2>Sua ideia merece se tornar realidade</h2>
+                    <p>Me conta o que você quer construir. Em menos de 24h te dou um retorno com os próximos passos.</p>
+                    <div class="cta-final-btns">
+                        <a href="https://wa.me/5551980120387?text=Ol%C3%A1%20Glauber%2C%20quero%20solicitar%20meu%20projeto."
+                            target="_blank" rel="noopener" class="btn btn-cta-white">
+                            <i class="fab fa-whatsapp mr-2"></i> Solicite seu projeto agora
+                        </a>
+                        <a href="#contato" class="btn btn-cta-outline">Enviar mensagem</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato" class="contact-section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Contato</span>
+                    <h2 class="section-title mt-3">Vamos conversar sobre o seu projeto</h2>
+                    <p class="section-subtitle">Preencha o formulário e entro em contato rapidamente. Sem enrolação.</p>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-7 mb-5 mb-lg-0">
+                        <form class="contact-form" id="contactForm" novalidate>
+                            <div class="form-group">
+                                <label for="name">Nome</label>
+                                <input type="text" class="form-control" id="name" name="name"
+                                    placeholder="Seu nome completo" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact">WhatsApp ou e-mail</label>
+                                <input type="text" class="form-control" id="contact" name="contact"
+                                    placeholder="(00) 00000-0000 ou nome@empresa.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">O que você quer construir?</label>
+                                <textarea class="form-control" id="message" name="message" rows="5"
+                                    placeholder="Descreva sua ideia ou o problema que quer resolver..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary-custom btn-lg">Enviar mensagem</button>
+                            <div id="formStatus" class="form-status mt-3" aria-live="polite"></div>
+                        </form>
+                    </div>
+                    <div class="col-lg-4 offset-lg-1">
+                        <div class="contact-info-card">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <h5>WhatsApp</h5>
+                                <a href="https://wa.me/5551980120387" target="_blank" rel="noopener">+55 (51) 98012-0387</a>
+                            </div>
+                        </div>
+                        <div class="contact-info-card">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h5>E-mail</h5>
+                                <a href="mailto:ggbarcelos@gmail.com">ggbarcelos@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-info-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h5>Atendimento</h5>
+                                <span>Remoto para todo o Brasil</span>
+                            </div>
+                        </div>
+                        <div class="contact-social mt-4">
+                            <a href="https://www.linkedin.com/in/glauber-gomes-barcelos-5b517a381/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/glauberbarcelos.dev/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://github.com/ggbarcelos" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <p class="footer-copy">© 2026 Glauber Barcelos. Todos os direitos reservados.</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/glauber-gomes-barcelos-5b517a381/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/glauberbarcelos.dev/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/ggbarcelos" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLUTUANTE -->
+    <a href="https://wa.me/5551980120387?text=Ol%C3%A1%20Glauber%2C%20quero%20solicitar%20meu%20projeto."
+        target="_blank" rel="noopener" class="whatsapp-float" title="Fale pelo WhatsApp" aria-label="Fale pelo WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-float-label">Solicite seu projeto</span>
+    </a>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>emailjs.init({ publicKey: 'xAtMa5JUwZUvcGnXw' });</script>
+    <script src="js/main.js"></script>
+</body>
+</html>
