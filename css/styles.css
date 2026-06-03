@@ -646,6 +646,43 @@ img { max-width: 100%; height: auto; display: block; }
    PORTFOLIO SECTION
    =================================== */
 .portfolio-section { padding: 90px 0; background: var(--bg); }
+
+/* Portfolio Groups */
+.portfolio-group { margin-bottom: 3rem; }
+.portfolio-group-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.4rem;
+    background: var(--primary-light);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--primary);
+    margin-bottom: 1.75rem;
+}
+.portfolio-group-icon {
+    width: 46px;
+    height: 46px;
+    background: var(--primary);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+.portfolio-group-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 0.15rem;
+}
+.portfolio-group-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
