@@ -126,6 +126,12 @@ const translations = {
         emp_desc:  'Site oficial do Summit Empreender 40+ — evento presencial em Porto Alegre com 25 palestrantes de renome nacional. Página de inscrições com contagem regressiva, line-up e geração de leads.',
         emp_r1:    'Apresentação do line-up e credibilidade do evento',
         emp_r2:    'Conversão de visitantes em inscritos',
+        // CAROL FONTANELLA
+        carol_tag:   'Terapeuta · Site',
+        carol_title: 'Carol Fontanella',
+        carol_desc:  'Site institucional e de vendas para terapeuta integrativa especialista em leitura vibracional. Apresentação de serviços, programas de 30 dias, depoimentos e captação de agendamentos online.',
+        carol_r1:    'Posicionamento de autoridade e confiança',
+        carol_r2:    'Conversão de visitantes em agendamentos',
 
         // CTA FINAL
         cta_badge:    'Próximo passo',
@@ -294,6 +300,12 @@ const translations = {
         emp_desc:  'Official website for the Empreender 40+ Summit — in-person event in Porto Alegre with 25 nationally renowned speakers. Registration page with countdown, lineup and lead generation.',
         emp_r1:    'Lineup presentation and event credibility',
         emp_r2:    'Converting visitors into registrants',
+        // CAROL FONTANELLA
+        carol_tag:   'Therapist · Website',
+        carol_title: 'Carol Fontanella',
+        carol_desc:  'Institutional and sales website for an integrative therapist specializing in vibrational reading. Service presentation, 30-day programs, testimonials and online appointment booking.',
+        carol_r1:    'Authority and trust positioning',
+        carol_r2:    'Converting visitors into booked appointments',
 
         // CTA FINAL
         cta_badge:    'Next step',
